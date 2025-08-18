@@ -107,7 +107,7 @@
 // }
 
 import './CSS/navbar.css';
-import MenuImage from '../assets/Menu.png'; 
+import MenuImage from '../assets/menu.png'; 
 import LogoImage from '../assets/logo.png'; 
 import { NavLink } from "react-router-dom";
 import { useState } from 'react';
