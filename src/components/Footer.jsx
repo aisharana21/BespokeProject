@@ -4,7 +4,7 @@ import InstagramLogo from '../assets/instagram.png';
 import FacebookLogo from '../assets/facebook.png'; 
 import LinkedInLogo from '../assets/linkedinlogo.png'; 
 import YoutubeLogo from '../assets/youtubelogo.png'; 
-import XLogo from '../assets/XLogo.png'; 
+import XLogo from '../assets/xLogo.png'; 
 import { NavLink } from "react-router-dom";
 
 export function Footer(){
