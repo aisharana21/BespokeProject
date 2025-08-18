@@ -1,0 +1,86 @@
+
+.request-quote-form-container {
+margin-bottom: 50px;
+
+}
+
+.request-quote{
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+box-shadow: 0 4px 10px rgba(63, 60, 60, 0.9);
+}
+.request-quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+   
+  
+}
+
+
+.request-quote-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+ 
+}
+
+
+.request-quote-form input,
+.request-quote-form select,
+.request-quote-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.request-quote-form select option{
+  appearance: none;
+  background-color: #f8f8f8;
+
+}
+.request-quote-form input:focus,
+.request-quote-form select:focus,
+.request-quote-form textarea:focus {
+  border-color: #ff6c2d;
+  outline: none;
+  box-shadow: 0 0 4px rgba(242, 191, 141, 0.3);
+}
+
+
+.request-quote-form input[type="file"] {
+  padding: 5px;
+  border: none;
+}
+
+
+.request-quote-form button {
+  background-color: black;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.request-quote-form button:hover {
+        background-color: #FF6C2D;
+}
+
+
+@media (max-width: 600px) {
+  .request-quote-form-container {
+    padding: 10px;
+  }
+  
+  .request-quote-form {
+    gap: 12px;
+  }
+}

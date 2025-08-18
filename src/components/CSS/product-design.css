@@ -1,0 +1,127 @@
+
+.product-design-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 500px;
+    padding: 15px;
+   
+    margin: 0 auto;
+    max-width: 100%;
+    background-color: black;
+    color: white;
+
+
+}
+.product-design-description{
+    padding: 15px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+
+
+
+ .design-title{
+    margin-bottom: 10px;
+ }
+.design-heading {
+  font-weight: 400; 
+  max-width: 350px; 
+  line-height: 1;
+}
+
+
+.view-work{
+    margin-bottom: 5px;
+    height: 50px;
+    align-content: center;
+    cursor: pointer;
+}
+.view-work-button{
+    background-color: transparent;
+    border: 1px solid rgb(214, 214, 214);
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+  transition: 
+  background-color 0.3s ease-in-out,
+   color 0.3s ease-in-out;
+
+}
+.view-work-button:hover{
+    background-color: #FF6C2D;
+    color: black;
+    border: none;
+}
+.main-image{
+    /* background-color: #FF6C2D; */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.main-image img {
+    width: 100%;       
+    max-width: 551px;  
+    height: auto;      
+    max-height: 450px; 
+    object-fit: contain;
+    overflow: hidden; 
+    border-radius: 5px;
+
+}
+
+.images-set{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+}
+.images-set img{
+    width: 210px;
+    height: 122px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.images-set img:hover {
+box-shadow: 0 4px 12px rgba(192, 156, 111, 0.1);
+}
+
+
+
+
+@media (max-width : 1000px) {
+   
+.main-image{
+    display: none;
+}
+
+
+}
+@media (max-width:750px) {
+    .images-set{
+        display: none;
+    }
+    .product-design-grid-container{
+    height: auto;
+    grid-template-columns: repeat(1,1fr);
+}
+.design-description-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.design-title{
+    text-align: center;
+}
+.design-heading {
+
+    max-width: 100%;
+}
+}

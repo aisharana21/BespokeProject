@@ -1,0 +1,20 @@
+.our-service-overview-container{ 
+    padding: 15px;
+    
+}
+.service-overview-description{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  
+}
+.service-overview-heading h2{
+    font-weight: 400;
+}
+.service-overview-subeading{
+text-align: center;
+
+}

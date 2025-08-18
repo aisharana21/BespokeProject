@@ -1,0 +1,109 @@
+.our-value-grid-container{
+   
+   padding-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%; 
+    margin-left: auto; 
+    margin-right: auto;
+    gap: 20px;  
+    padding-left:15px ;
+    padding-right:15px ;
+}
+.values-heading h1{
+    font-weight: 400; 
+  max-width: 270px; 
+  line-height: 1;
+    text-transform: uppercase;
+
+  
+}
+.our-values-description{
+    padding: 15px;
+}
+.colored-text{
+    color: #FF6C2D;
+}
+.values-description{
+    color: rgb(47, 45, 45);
+    max-width: 350px;
+    height: 100px;
+    margin: 15px 0;
+    font-size: 15px;
+}
+.values-button{
+    margin-top: 10px;
+    height: 50px;
+    align-content: center;
+}
+.values-button button{
+    background-color: transparent;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 50px;
+    color: black;
+  transition: 
+  background-color 0.3s ease-in-out,
+   color 0.3s ease-in-out;
+
+}
+.values-button button:hover{
+    background-color: #FF6C2D;
+    border: none;
+}
+.values-container{
+    display: grid;
+    grid-template-columns: 250px 250px;
+    gap: 10px;
+    justify-content: center;
+}
+.values{
+    background-color: black;
+    color: white;
+  
+    height: 250px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.value-img img{
+    width: 50px;
+}
+.value-img {
+    margin-bottom: 25px;
+    padding: 10px;
+}
+.value-heading{
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+.value-description{
+    color: gray;
+    height: auto;
+}
+@media (max-width:900px) {
+.values-description{
+    height: auto;
+}
+}
+@media (max-width:750px) {
+   .our-value-grid-container{
+    grid-template-columns: repeat(1 , 100%);
+   }
+   .our-values-description{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+.values-description{
+    text-align: center;
+    max-width: 500px;
+}
+}
+@media (max-width:530px) {
+   .values-container{
+   grid-template-columns: repeat(1,250px);
+   }
+}

@@ -1,0 +1,26 @@
+.copyright-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%; /* Control maximum width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto;
+    padding: 15px;
+    font-size: 13px;
+    height: 50px;
+}
+.policies a{
+    text-decoration: none;
+color: black;
+}
+.policies{
+    display: flex;
+    gap: 10px;
+}
+@media (max-width:680px) {
+    .copyright-container{
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+}

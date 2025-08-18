@@ -1,0 +1,32 @@
+
+
+.bespoke-values-read-more-button button 
+{
+    padding: 10px 20px;
+
+  border: none;
+  border-radius: 25px;
+  background-color: #ff6c2d;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+.bespoke-values-read-more-button button:hover{
+  background-color: white;
+
+}
+.values-card{
+  height: auto;
+}
+.values-card-img img{
+   width: 50px;
+}
+.bespoke-value-container{
+  margin-bottom:100px;
+}
+.values-card-img{
+  height: 70px ;
+  align-content: center;
+}

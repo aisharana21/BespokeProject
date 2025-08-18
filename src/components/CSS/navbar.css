@@ -1,0 +1,168 @@
+/* .nav-container{
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+
+
+}
+
+.brand-name{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+.logo-image img{
+    width: 22px;
+    height: 22px;
+}
+.menu ul{
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    list-style: none;
+    font-size: 15px;
+}
+.menu img{
+    width: 15px;
+}
+@media (max-width:450px) {
+    .nav{display: block;
+ 
+    }
+    .brand-name{
+        justify-content: center;
+        margin-bottom: 10px;
+
+    }
+
+
+}
+@media (max-width:337px) {
+    .nav{
+        padding: 5px;
+    }
+    .menu ul{
+    gap: 10px;
+  padding: none;
+   
+    
+}
+} */
+.nav-container {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  padding-top: 20px;
+}
+
+.brand-name {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-image img {
+  width: 22px;
+  height: 22px;
+}
+
+.menu ul {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  font-size: 15px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  z-index: 1001;
+}
+
+.hamburger img {
+  width: 25px;
+}
+
+.hamburger-text {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+@media (max-width: 500px) {
+  .nav {
+    flex-direction: row;  
+   align-items: center;
+  }
+
+  .hamburger {
+    display: flex; 
+    margin-left: auto;
+    /* z-index: 1001; */
+  }
+
+  .menu {
+    display: none;
+    position: absolute; 
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 15px 0; 
+    /* z-index: 1000; */
+  }
+
+  .menu.open {
+    display: block;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
