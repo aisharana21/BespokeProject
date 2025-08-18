@@ -122,13 +122,12 @@ export function Navbar() {
   };
 
   const handleLinkClick = () => {
-    setMenuOpen(false); // close menu after clicking link
+    setMenuOpen(false); 
   };
 
   return (
     <div className="nav-container">
       <div className="nav">
-        {/* Brand Logo */}
         <div className="brand-name">
           <span className='logo-image'>
             <img src={LogoImage} alt="logo" />

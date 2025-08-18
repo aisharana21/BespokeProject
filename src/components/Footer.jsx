@@ -2,8 +2,8 @@ import './CSS/footer.css'
 import LogoImage from '../assets/logo-black.png'; 
 import InstagramLogo from '../assets/instagram.png'; 
 import FacebookLogo from '../assets/facebook.png'; 
-import LinkedInLogo from '../assets/LinkedInLogo.png'; 
-import YoutubeLogo from '../assets/YoutubeLogo.png'; 
+import LinkedInLogo from '../assets/linkedinlogo.png'; 
+import YoutubeLogo from '../assets/youtubelogo.png'; 
 import XLogo from '../assets/XLogo.png'; 
 import { NavLink } from "react-router-dom";
 
