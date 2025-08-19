@@ -2,6 +2,7 @@ import './CSS/copyright.css'
 import { NavLink } from 'react-router-dom';
 
 export function Copyright() {
+    
     return (
         <div className="copyright-container">
 

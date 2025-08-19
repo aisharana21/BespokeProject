@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 
 
 export function Portfolio() {
+    
     const portfolioData = [
         {
             id: "20250730-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",

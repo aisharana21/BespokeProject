@@ -6,7 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 // import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
  import { ContactUsFrom } from './ContactUsForm';
+import { motion } from 'framer-motion';
 export function ContactUs() {
+
+
 
   const [showPhonePopup, setShowPhonePopup] = useState(false); 
 
@@ -14,16 +17,29 @@ export function ContactUs() {
     <div className="contact-page-main">
       <div className="contact-container">
         <div className="contact-info">
-          <div className="page-context">
+          <motion.div
+             initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{ duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+          className="page-context">
             <h2>We're Here to Bring Your Vision to Life</h2>
             <p>
               At Bespoke, your ideas matter. Whether you're ready to start your custom project or simply have a question, our team is here to guide you every step of the way. Get in touch and let's create something extraordinary together.
             </p>
           
-          </div>
+          </motion.div>
 
-          <div className="contact-options">
-            <div className="contact-sources">
+          <div 
+           
+
+          className="contact-options">
+            <motion.div
+               initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{delay:0.2, duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+            className="contact-sources">
               <div className="contact-icon">
                 <FontAwesomeIcon icon={faLocationDot} style={{ color: "#EF8E36" }} size="xl" />
               </div>
@@ -37,9 +53,15 @@ export function ContactUs() {
                   Address: 123 Creative Street, Lahore, Pakistan
                 </a>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="contact-sources">
+            <motion.div
+               initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{ delay:0.4, duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+            
+            className="contact-sources">
               <div className="contact-icon">
                 <FontAwesomeIcon icon={faPhone} style={{ color: "#EF8E36" }} size="xl" />
               </div>
@@ -64,10 +86,16 @@ export function ContactUs() {
               )}
               </ul>
 </div>
-            </div>
+            </motion.div>
 
 
-            <div className="contact-sources">
+            <motion.div
+            
+               initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{delay:0.6, duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+            className="contact-sources">
               <div className="contact-icon">
                 <FontAwesomeIcon icon={faEnvelope} style={{ color: "#EF8E36" }} size="xl" />
               </div>
@@ -80,7 +108,7 @@ export function ContactUs() {
                   Email: hello@bespoke.com
                 </a>
 </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 <ContactUsFrom/>
