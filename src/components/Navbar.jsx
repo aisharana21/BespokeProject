@@ -128,10 +128,12 @@ export function Navbar() {
     <div className="nav-container">
       <div className="nav">
         <div className="brand-name">
+          
           <span className='logo-image'>
             <img src={LogoImage} alt="logo" />
           </span>  
-          Bespoke
+      
+      <NavLink to="/" className='link-style'>Bespoke</NavLink>
         </div>
 
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>

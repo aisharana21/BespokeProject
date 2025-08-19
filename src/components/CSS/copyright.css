@@ -16,6 +16,10 @@
 .policies ul li{
 list-style: none;
 color: black;
+  transition: color 0.3s ease-in-out; 
+}
+.policies ul li:hover{
+color:  #742605;
 }
 .policies{
     display: flex;
