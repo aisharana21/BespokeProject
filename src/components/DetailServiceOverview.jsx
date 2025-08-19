@@ -28,7 +28,7 @@ export function DetailServiceOverview() {
 
   return (
     <div className="detail-service-overview-container
-     detail-overview-conatiner" >
+     detail-overview-container" >
       <div className="detail-service-overview 
       detail-overview">
         {detailServiceData.map((data, index) => (
