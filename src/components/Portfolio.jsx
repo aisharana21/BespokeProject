@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 
 
 export function Portfolio() {
-    
+
     const portfolioData = [
         {
             id: "20250730-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
@@ -43,11 +43,11 @@ export function Portfolio() {
         <div className="portfolio-container">
             <div className="hero-section">
                 <motion.div
-                initial={{ opacity: 0, x: -100 }}   
-  whileInView={{ opacity: 1, x: 0 }} 
-  transition={{  duration: 1, ease: "easeOut" }}
-  viewport={{ once: true }} 
-                className="portfolio-description
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className="portfolio-description
    hero-section-description
   ">
                     <div className="poortfolio-heading hero-section-heading">
@@ -69,7 +69,12 @@ export function Portfolio() {
             detail-overview-conatiner">
                 <div className="portfolio-overview detail-overview">
                     {portfolioData.map((data, index) => (
-                        <div key={index} className="portfolio-detail 
+                        <motion.div
+                            initial={{ opacity: 0, x: -100 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                            key={index} className="portfolio-detail 
                         detail
                         ">
 
@@ -79,46 +84,40 @@ export function Portfolio() {
                                     detail-img">
                                         <img src={data.image} alt={data.name} />
                                     </div>
-                                    <motion.div 
-                                    initial={{opacity:0 ,scale: 0.8}}
-    whileInView={{opacity:1,scale: 1}}
-    transition={{ duration:1, ease: "easeOut"}}
-    viewport={{ once: true }}
-                                    className="portfolio-detail-description 
+                                    <div
+
+                                        className="portfolio-detail-description 
                                     detail-description">
                                         <div className="portfolio-heading detail-heading">
                                             <h2>{data.name}</h2>
                                         </div>
                                         <div className="portfolio-subheading detail-subheading">{data.heading}</div>
-                                        
+
                                         <div className="view-project-button">
                                             <NavLink to={`/portfolio/${data.id}`} className='link-style'><button> View Project</button></NavLink>
                                         </div>
-                                    </motion.div>
-                                
+                                    </div>
+
 
                                 </>
                             ) : (
                                 <>
-                                     
-                                    <motion.div
-                                    initial={{opacity:0 ,scale: 0.8}}
-    whileInView={{opacity:1,scale: 1}}
-    transition={{delay:0.3, duration:1, ease: "easeOut"}}
-    viewport={{ once: true }}
-                                    
-                                    className="portfolio-detail-description 
+
+                                    <div
+
+
+                                        className="portfolio-detail-description 
                                     detail-description">
                                         <div className="portfolio-heading detail-heading">
                                             <h2>{data.name}</h2>
                                         </div>
                                         <div className="portfolio-subheading detail-subheading">{data.heading}</div>
-                                        
+
                                         <div className="view-project-button">
                                             <NavLink to={`/portfolio/${data.id}`} className='link-style'><button> View Project</button></NavLink>
                                         </div>
-                                    </motion.div>
-                                      <div className="portfolio-img 
+                                    </div>
+                                    <div className="portfolio-img 
                                     detail-img">
                                         <img src={data.image} alt={data.name} />
                                     </div>
@@ -126,7 +125,7 @@ export function Portfolio() {
 
                                 </>
                             )}
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
