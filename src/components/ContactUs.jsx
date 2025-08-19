@@ -1,9 +1,13 @@
 import './CSS/contact-us.css';
+import './CSS/DefaultStyle/error-message.css';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 // import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-
+ import { ContactUsFrom } from './ContactUsForm';
 export function ContactUs() {
+
+
   return (
     <div className="contact-page-main">
       <div className="contact-container">
@@ -46,23 +50,7 @@ export function ContactUs() {
             </div>
           </div>
         </div>
-
-        <div className="contact-form-container">
-          <h2>Get In Touch</h2>
-          <div className="contact-form">
-            <form className='contact-us-form'>
-              <label>Full Name (Required)</label>
-              <input type="text" name="name" id="name" required  placeholder="Name" />
-              <label>Email (Required)</label>
-              <input type="email" name="email"  required id="email" placeholder="Email" />
-              <label>Phone Number (Optional)</label>
-              <input type="number" name="phone" id="phone" placeholder="Phone" />
-              <label>Your Message (Required)</label>
-              <textarea id="message" name="message" rows="5" cols="40" required placeholder="Message"></textarea>
-              <button className="send-button" type="submit">SEND</button>
-            </form>
-          </div>
-        </div>
+<ContactUsFrom/>
       </div>
     </div>
   );

@@ -9,8 +9,12 @@
     font-size: 13px;
     height: 50px;
 }
-.policies a{
-    text-decoration: none;
+.policies ul{
+    display: flex;
+    gap: 10px;
+}
+.policies ul li{
+list-style: none;
 color: black;
 }
 .policies{
@@ -22,5 +26,6 @@ color: black;
         flex-wrap: wrap;
         gap: 15px;
         justify-content: center;
+    height: auto;
     }
 }

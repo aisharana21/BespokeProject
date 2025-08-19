@@ -14,7 +14,7 @@ box-shadow: 0 4px 10px rgba(63, 60, 60, 0.9);
   display: flex;
   flex-direction: column;
   gap: 15px;
-   
+   margin-top: 30px;
   
 }
 
@@ -69,12 +69,22 @@ box-shadow: 0 4px 10px rgba(63, 60, 60, 0.9);
   font-weight: 600;
   transition: background-color 0.3s ease-in-out;
 }
-
+.error-message{
+  color: red;
+  font-size: 12px;
+}
 .request-quote-form button:hover {
         background-color: #FF6C2D;
 }
 
-
+.form-submit-message{
+  width: 100%;
+  /* height: 50px; */
+  padding: 5px;
+  color: green;
+  text-align: center;
+  margin-top: 8px;
+}
 @media (max-width: 600px) {
   .request-quote-form-container {
     padding: 10px;

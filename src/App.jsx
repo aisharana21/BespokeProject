@@ -10,6 +10,8 @@ import { ContactUs } from './components/ContactUs'
 import { Values } from './components/Values'
 import { RequestQuote } from './components/RequestQuote'
 import { ProjectDetail } from './components/ProjectDetail'
+import { PrivacyPolicy } from './components/PrivacyPolicy'
+import { TermsAndCondition } from './components/TermsAndCondition'
 function App() {
   return (<>
     <Navbar />
@@ -48,6 +50,16 @@ function App() {
       <Route
         path='/portfolio/:projectid'
         element={<ProjectDetail/>}
+
+      />
+      <Route
+        path='/privacypolicy'
+        element={<PrivacyPolicy/>}
+
+      />
+      <Route
+        path='/termsandcondition'
+        element={<TermsAndCondition/>}
 
       />
 

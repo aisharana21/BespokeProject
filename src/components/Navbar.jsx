@@ -107,22 +107,21 @@
 // }
 
 import './CSS/navbar.css';
-import MenuImage from '../assets/menu.png'; 
-import LogoImage from '../assets/logo.png'; 
+import MenuImage from '../assets/menu.png';
+import LogoImage from '../assets/logo.png';
 import { NavLink } from "react-router-dom";
 import { useState } from 'react';
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // function for active link class
   const getNavColor = ({ isActive }) => {
-    return {
-      color: isActive ? '#FF6C2D' : 'white',
-    };
+    return isActive ? 'link-style active' : 'link-style';
   };
 
   const handleLinkClick = () => {
-    setMenuOpen(false); 
+    setMenuOpen(false);
   };
 
   return (
@@ -136,16 +135,16 @@ export function Navbar() {
         </div>
 
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-         <span className='hamburger-text'>Menu</span>
+          <span className='hamburger-text'>Menu</span>
           <img src={MenuImage} alt="menu" />
         </div>
+
         <div className={`menu ${menuOpen ? 'open' : ''}`}>
           <ul>
             <li>
               <NavLink 
-                className='link-style' 
                 to="/" 
-                style={getNavColor}
+                className={getNavColor}
                 onClick={handleLinkClick}
               >
                 Home
@@ -153,9 +152,8 @@ export function Navbar() {
             </li>
             <li>
               <NavLink 
-                className='link-style' 
                 to="/service" 
-                style={getNavColor}
+                className={getNavColor}
                 onClick={handleLinkClick}
               >
                 Services
@@ -164,8 +162,7 @@ export function Navbar() {
             <li>
               <NavLink 
                 to='/portfolio' 
-                className='link-style'
-                style={getNavColor}
+                className={getNavColor}
                 onClick={handleLinkClick}
               >
                 Portfolio
@@ -173,9 +170,8 @@ export function Navbar() {
             </li>
             <li>
               <NavLink 
-                className='link-style' 
-                to="/contactus"
-                style={getNavColor}
+                to="/contactus" 
+                className={getNavColor}
                 onClick={handleLinkClick}
               >
                 Contact Us

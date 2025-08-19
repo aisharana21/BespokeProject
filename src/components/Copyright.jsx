@@ -1,5 +1,5 @@
 import './CSS/copyright.css'
-
+import { NavLink } from 'react-router-dom';
 
 export function Copyright(){
     return (
@@ -10,9 +10,21 @@ export function Copyright(){
 </p>
             </div>
             <div className="policies">
-            <a href="">Privacy Policy</a>
-            <a href="">Terms & Condition</a>
-            <a href="">Site Map</a>
+                <ul>
+                    <li><NavLink className='link-style'
+                                    to="/privacypolicy" 
+                                    
+                                  >
+                                   Privacy Policy
+                                  </NavLink></li>
+                    <li><NavLink className='link-style'
+                                    to="/termsandcondition" 
+                                    
+                                  >
+                                 Terms and Condition
+                                  </NavLink></li>
+                </ul>
+          
             </div>
         </div> 
     );

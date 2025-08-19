@@ -1,0 +1,43 @@
+.privacy-condition-description {
+  padding: 30px 55px;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 60px; 
+}
+
+
+.policy-term-decription {
+  margin-bottom: 30px;
+}
+
+.policy-term-decription:last-child {
+  margin-bottom: 0;
+}
+
+.policy-term-decription h2 {
+  font-size: 20px;
+  font-weight: 500; 
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.policy-term-decription p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.policy-term-decription p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .privacy-condtion-description {
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  .policy-term-decription h2 {
+    font-size: 18px;
+  }
+}
