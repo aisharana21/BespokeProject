@@ -9,26 +9,34 @@ export function OurValues(){
     return(
 
 <div className="our-value-grid-container">
-<div
-
+<motion.div
+  initial={{opacity:0 ,scale: 0.8}}
+    whileInView={{opacity:1,scale: 1}}
+    transition={{ duration:1.5, ease: "easeOut"}}
+    viewport={{ once: true }}   
 className="our-values-description">
-    <motion.div
+    <div
         
     className="values-heading">
         <h1>
          <span className='colored-text'>Crafted </span>To Easily Fit Into Everyday Life
         </h1>
-    </motion.div>
+    </div>
     <div className="values-description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
     <div className="values-button">
         <button> <Link className='link-style' to="/values" >COMPANY VALUES</Link> </button>
     </div>
-</div>
+</motion.div>
 
 
-   <div className="values-container" >
+   <motion.div 
+   initial={{opacity:0 ,scale: 0.8}}
+    whileInView={{opacity:1,scale: 1}}
+    transition={{ duration:1.5, ease: "easeOut"}}
+    viewport={{ once: true }}  
+   className="values-container" >
 <div className="values">
     <div className="value-img">
         <img src={starImage} alt="" />
@@ -39,6 +47,7 @@ className="our-values-description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 </div>
 <div className="values">
+
     <div className="value-img">
         <img src={ovalImage} alt="" />
     </div>
@@ -65,7 +74,7 @@ className="our-values-description">
     <div className="value-description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
 </div>
-</div> 
+</motion.div> 
 
 
 </div>
