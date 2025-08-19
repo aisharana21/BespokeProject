@@ -116,7 +116,7 @@ export function RequestQuoteForm() {
                     <p className="error-message">{error.email}</p>
                     <div className="feild">
                         <label>
-                            Phone Number (Optional)
+                            Phone Number (Required)
                         </label>
                         <input
                             type="tel"
