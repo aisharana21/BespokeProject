@@ -1,5 +1,5 @@
 import './CSS/project-detail-feature-card.css';
-import { projectDetailData } from './data/projectDetailData';
+// import { projectDetailData } from './data/projectDetailData';
 
 export function ProjectDetailOverviewFeatureCard({project}){
 
@@ -11,8 +11,8 @@ export function ProjectDetailOverviewFeatureCard({project}){
       </div>
   <div className="project-feature-card-grid">
 {
- project.features.map((feature)=>(
-    <div className="project-detail-feature-card">
+ project.features.map((feature,index)=>(
+    <div key={index} className="project-detail-feature-card">
 
   <p>{feature}</p>
 

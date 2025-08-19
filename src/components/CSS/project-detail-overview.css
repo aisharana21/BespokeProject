@@ -51,4 +51,8 @@
   .project-overview-img img {
     max-width: 70%;
   }
+  .project-overview-img {
+  background-color: white;
+  /* padding: 10px; */
+}
 }
