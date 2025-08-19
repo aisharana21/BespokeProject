@@ -131,7 +131,7 @@ export function RequestQuoteForm() {
                     <p className="error-message">{error.phone}</p>
                     <div className="feild">
                         <label>
-                            Company Name (Optional)
+                            Company Name (Required)
                         </label>
                         <input
                             onChange={handleChange}
