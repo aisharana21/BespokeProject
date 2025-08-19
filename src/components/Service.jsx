@@ -16,8 +16,8 @@ export function Service (){
 className="hero-section">
 <motion.div 
 
-initial={{ opacity: 0, x: -100 }}   // start 100px left of original position
-  whileInView={{ opacity: 1, x: 0 }} // animate to original position
+initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
   transition={{ duration: 1, ease: "easeOut" }}
   viewport={{ once: true }}   
 className="section-description
