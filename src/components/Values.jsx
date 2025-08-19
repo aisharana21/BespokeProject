@@ -4,7 +4,7 @@ import './CSS/DefaultStyle/text-color.css';
 import './CSS/DefaultStyle/page-heading.css';
 import starImage from '../assets/star.png'; 
 import ovalImage from '../assets/oval.png';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 export function Values(){
     const valueData= [
         {
