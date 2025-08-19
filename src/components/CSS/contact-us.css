@@ -11,6 +11,22 @@ grid-template-columns: repeat(2,1fr);
 gap: 10px;
 
 }
+.contact-context a{
+  color: white;
+    transition: color 0.3s ease-in-out;
+}
+.contact-context a:hover{
+  color:  #FF6C2D;
+}
+.contact-context ul li{
+  list-style: none;
+  cursor: pointer;
+    transition: color 0.3s ease-in-out;
+
+}
+.contact-context li:hover{
+  color:  #FF6C2D;
+}
 .page-context h2,
 .contact-form-container h2{
     font-weight: 400;

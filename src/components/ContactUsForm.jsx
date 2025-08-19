@@ -2,96 +2,97 @@ import { useState, useEffect } from 'react';
 import './CSS/contact-us.css';
 import './CSS/DefaultStyle/error-message.css';
 
-export function ContactUsFrom(){
-    
-       const [formInput, setFormInput] = useState({
-            username: "", email: "", phone: "", message:"" });
-                  const [error, setErrors] = useState({});
-    
-    const [submit, setSubmit]= useState(false);
-        const [formSubmitMessage,setFormSubmitMessage]=useState('');
-              const handleChange = (event) => {
-            console.log(event.target);
-            const { name, value } = event.target;
-            setFormInput({ ...formInput, [name]: value });
-            console.log(formInput)
-        }
-             const handleSubmit = (e) => {
-            e.preventDefault();
-            setErrors(validate(formInput));
-            setSubmit(true);
-        }
-         
-         useEffect(() => {
-           if (Object.keys(error).length === 0 && submit) {
-              setFormSubmitMessage("Form is Submitted Successfully");
-              setTimeout(() => {
-                      setFormSubmitMessage("");
-        }, 2000);
-           setFormInput({
-              username: "",
-              email: "",
-              phone: "",
-              message:"",
+export function ContactUsFrom() {
+
+    const [formInput, setFormInput] = useState({
+        username: "", email: "", phone: "", message: ""
+    });
+    const [error, setErrors] = useState({});
+
+    const [submit, setSubmit] = useState(false);
+    const [formSubmitMessage, setFormSubmitMessage] = useState('');
+    const handleChange = (event) => {
+        console.log(event.target);
+        const { name, value } = event.target;
+        setFormInput({ ...formInput, [name]: value });
+        console.log(formInput)
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setErrors(validate(formInput));
+        setSubmit(true);
+    }
+
+    useEffect(() => {
+        if (Object.keys(error).length === 0 && submit) {
+            setFormSubmitMessage("Your Message is Submitted Successfully");
+            setTimeout(() => {
+                setFormSubmitMessage("");
+            }, 2000);
+            setFormInput({
+                username: "",
+                email: "",
+                phone: "",
+                message: "",
             });
-            }
-            else{
-                      setFormSubmitMessage("");
-        
-            }
-        }, [error,submit])
-        const validate = (input) => {
-            console.log(input);
-            const errors = {}
-            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-            if (!input.username) {
-                errors.username = "Enter Username"
-            }
-            if (!input.email) {
-                errors.email = "Enter Email"
-            }
-            else if (!regex.test(input.email)) {
-                errors.email = "Enter Email"
-    
-            }
-            if (Number(input.phone) < 11) {
-                errors.phone = "Phone number must be at least 11 digits "
-    
-            }
-            else if (!/^\d+$/.test(input.phone)) {
-                errors.phone = "Phone number must contain only digits";
-            }
-            if(!input.message){
-               errors.message = "Enter your message!";
-            }
-            return errors;
         }
-    return(
+        else {
+            setFormSubmitMessage("");
+
+        }
+    }, [error, submit])
+    const validate = (input) => {
+        console.log(input);
+        const errors = {}
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!input.username) {
+            errors.username = "Enter Username"
+        }
+        if (!input.email) {
+            errors.email = "Enter Email"
+        }
+        else if (!regex.test(input.email)) {
+            errors.email = "Enter Email"
+
+        }
+        if (Number(input.phone) < 11) {
+            errors.phone = "Phone number must be at least 11 digits "
+
+        }
+        else if (!/^\d+$/.test(input.phone)) {
+            errors.phone = "Phone number must contain only digits";
+        }
+        if (!input.message) {
+            errors.message = "Enter your message!";
+        }
+        return errors;
+    }
+    return (
         <div className="contact-form-container">
-          <h2>Get In Touch</h2>
-          <div className="contact-form">
-            <form className='contact-us-form' onSubmit={handleSubmit}>
-              <label>Full Name (Required)</label>
-              <input type="text" name="username"id="name" value={formInput.username} onChange={handleChange}  placeholder="Name" />
-              <p className="error-message">{error.username}</p>
-              <label>Email (Required)</label>
-              <input type="email" name="email" onChange={handleChange}  value={formInput.email} id="email" placeholder="Email" />
-              <p className="error-message">{error.email}</p>
-              <label>Phone Number (Optional)</label>
-              <input type="number" onChange={handleChange} name="phone" id="phone"  value={formInput.phone}placeholder="Phone" />
-                            <p className="error-message">{error.phone}</p>
+            <h2>Get In Touch</h2>
+            <div className="contact-form">
+                <form className='contact-us-form' onSubmit={handleSubmit}>
+                    <label>Full Name (Required)</label>
+                    <input type="text" name="username" id="name" value={formInput.username} onChange={handleChange} placeholder="Name" />
+                    <p className="error-message">{error.username}</p>
+                    <label>Email (Required)</label>
+                    <input type="email" name="email" onChange={handleChange} value={formInput.email} id="email" placeholder="Email" />
+                    <p className="error-message">{error.email}</p>
+                    <label>Phone Number (Optional)</label>
+                    <input type="number" onChange={handleChange} name="phone" id="phone" value={formInput.phone} placeholder="Phone" />
+                    <p className="error-message">{error.phone}</p>
 
-              <label>Your Message (Required)</label>
-              <textarea id="message" name="message" rows="5" cols="40" value={formInput.message}  onChange={handleChange} placeholder="Message"></textarea>
-                            <p className="error-message">{error.message}</p>
+                    <label>Your Message (Required)</label>
+                    <textarea id="message" name="message" rows="5" cols="40" value={formInput.message} onChange={handleChange} placeholder="Message"></textarea>
+                    <p className="error-message">{error.message}</p>
 
-              <button className="send-button" type="submit">SEND</button>
-            </form>
-            <div className="form-submit-message">
-                {formSubmitMessage}
-               </div>
-          </div>
+                    <button className="send-button" type="submit">SEND</button>
+                </form>
+                <div className="form-submit-message">
+                    {formSubmitMessage}
+                </div>
+            </div>
         </div>
-        );
+    );
 }

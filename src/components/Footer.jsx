@@ -1,16 +1,18 @@
 import './CSS/footer.css'
-import LogoImage from '../assets/logo-black.png'; 
-import InstagramLogo from '../assets/instagram.png'; 
-import FacebookLogo from '../assets/facebook.png'; 
-import LinkedInLogo from '../assets/LinkedInLogo.png'; 
-import YoutubeLogo from '../assets/YoutubeLogo.png'; 
-import XLogo from '../assets/XLogo.png'; 
+import './CSS/DefaultStyle/popup.css';
+
+import LogoImage from '../assets/logo-black.png';
+import InstagramLogo from '../assets/instagram.png';
+import FacebookLogo from '../assets/facebook.png';
+import LinkedInLogo from '../assets/LinkedInLogo.png';
+import YoutubeLogo from '../assets/YoutubeLogo.png';
+import XLogo from '../assets/XLogo.png';
 import { NavLink } from "react-router-dom";
 import { projectDetailData } from './data/projectDetailData';
-import { useState } from "react";  
+import { useState } from "react";
 
 export function Footer() {
-  const [showPhonePopup, setShowPhonePopup] = useState(false); 
+  const [showPhonePopup, setShowPhonePopup] = useState(false);
 
   return (
     <div className="footer-container">
@@ -31,7 +33,7 @@ export function Footer() {
       </div>
 
       <div className="footer-links-container">
-         <div className="footer-link">
+        <div className="footer-link">
           <div className="footer-link-heading"><h3>Quick Links</h3></div>
           <div className="link-list">
             <ul>
@@ -49,8 +51,8 @@ export function Footer() {
             <ul>
               {projectDetailData.map(project => (
                 <li key={project.id}>
-                  <NavLink 
-                    className="link-style" 
+                  <NavLink
+                    className="link-style"
                     to={`/portfolio/${project.id}`}
                   >
                     {project.catagory}
@@ -61,8 +63,8 @@ export function Footer() {
           </div>
         </div>
 
-       
-       
+
+
 
         <div className="footer-link">
           <div className="footer-link-heading"><h3>Info</h3></div>
@@ -78,16 +80,15 @@ export function Footer() {
                 </a>
               </li>
 
-              {/* Phone Popup */}
-              <li onClick={() => setShowPhonePopup(true)}>Phone: +92 300 1234567</li>            
+              <li onClick={() => setShowPhonePopup(true)}>Phone: +92 300 1234567</li>
               {showPhonePopup && (
                 <div className={`popup-overlay ${showPhonePopup ? "show" : ""}`}>
                   <div className="popup-content">
                     <h3>Call +92 300 1234567?</h3>
                     <div className="popup-buttons">
                       <button className="call-btn">Call</button>
-                      <button 
-                        className="close-btn" 
+                      <button
+                        className="close-btn"
                         onClick={() => setShowPhonePopup(false)}
                       >
                         Close
@@ -98,7 +99,7 @@ export function Footer() {
               )}
 
               <li>
-                <a 
+                <a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=rana.ayesha590@gmail.com"
                   target="_blank"
                   className="link-style"
@@ -111,5 +112,5 @@ export function Footer() {
         </div>
       </div>
     </div>
-  );  
+  );
 }

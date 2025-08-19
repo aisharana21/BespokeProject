@@ -34,8 +34,13 @@ border-bottom: 1px solid gray;
 }
 .social-links img{
     cursor: pointer;
-   
+     transition: transform 0.3s ease-in-out;
 }
+
+.social-links img:hover {
+  transform: scale(1.2); 
+}
+
 .footer-links-container{
 height: 152px;
 display: grid;
@@ -49,6 +54,13 @@ gap: 20px;
  line-height: 1.8;
   transition: color 0.3s ease-in-out; 
   max-width: 100%;
+        transition: color 0.3s ease-in-out;
+
+}
+.footer-links-container ul li:hover {
+ color: #742605;
+
+
 }
 a{
     text-decoration: none;
@@ -61,6 +73,7 @@ color: #742605;
 .footer-link-heading{
     margin-bottom: 5px;
 }
+
 .footer-link-heading h3{
         font-weight: 450;
 
@@ -99,76 +112,20 @@ color: #742605;
     .footer-link{
         margin-bottom: 10px;
     }
+    .logo-name{
+      font-size: 30px;
+    }
+    .logo-image-black img{
+    width: 26px;
+    height: 26px;
+}
 .footer-logo-container{
     justify-content: flex-start;
+    gap: 10px;
     height: auto;
 }
+.follow-instruction{
+  font-size: 18px;
+}
     
-}
-.popup-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 15px; 
-}
-
-.popup-buttons .call-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  background-color: #FF6C2D;
-  color: black;
-  transition: all 0.3s ease-in-out;
-}
-
-.popup-buttons .call-btn:hover {
-  background-color: white; 
-}
-
-.popup-buttons .close-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  background-color: #ddd;
-  color: #333;
-  transition: all 0.3s ease-in-out;
-}
-
-.popup-buttons .close-btn:hover {
-  background-color: #bbb; 
-}
-
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-
-  opacity: 0;               
-  transition: opacity 0.3s ease-in-out; 
-}
-
-.popup-overlay.show {
-  opacity: 1;              
-}
-
-.popup-content {
-  background: black;
-  color: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  text-align: center;
-
 }
