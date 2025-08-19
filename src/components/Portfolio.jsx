@@ -7,6 +7,7 @@ import CorporateBranding from '../assets/corporatebrandingkit.jpg';
 import { ProjectDetail } from './ProjectDetail';
 import { NavLink } from 'react-router-dom';
 import './CSS/DefaultStyle/detail-overview.css';
+import { motion } from 'framer-motion';
 
 
 export function Portfolio() {
@@ -40,7 +41,12 @@ export function Portfolio() {
     return (
         <div className="portfolio-container">
             <div className="hero-section">
-                <div className="portfolio-description
+                <motion.div
+                initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{  duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+                className="portfolio-description
    hero-section-description
   ">
                     <div className="poortfolio-heading hero-section-heading">
@@ -53,7 +59,7 @@ export function Portfolio() {
 
                     </div>
 
-                </div>
+                </motion.div>
                 <div className="portfolio-img hero-section-img">
                     <img src={ManImage} alt="" />
                 </div>
@@ -72,7 +78,12 @@ export function Portfolio() {
                                     detail-img">
                                         <img src={data.image} alt={data.name} />
                                     </div>
-                                    <div className="portfolio-detail-description 
+                                    <motion.div 
+                                    initial={{opacity:0 ,scale: 0.8}}
+    whileInView={{opacity:1,scale: 1}}
+    transition={{ duration:1, ease: "easeOut"}}
+    viewport={{ once: true }}
+                                    className="portfolio-detail-description 
                                     detail-description">
                                         <div className="portfolio-heading detail-heading">
                                             <h2>{data.name}</h2>
@@ -82,14 +93,20 @@ export function Portfolio() {
                                         <div className="view-project-button">
                                             <NavLink to={`/portfolio/${data.id}`} className='link-style'><button> View Project</button></NavLink>
                                         </div>
-                                    </div>
-                                    {console.log(index)}
+                                    </motion.div>
+                                
 
                                 </>
                             ) : (
                                 <>
                                      
-                                    <div className="portfolio-detail-description 
+                                    <motion.div
+                                    initial={{opacity:0 ,scale: 0.8}}
+    whileInView={{opacity:1,scale: 1}}
+    transition={{delay:0.3, duration:1, ease: "easeOut"}}
+    viewport={{ once: true }}
+                                    
+                                    className="portfolio-detail-description 
                                     detail-description">
                                         <div className="portfolio-heading detail-heading">
                                             <h2>{data.name}</h2>
@@ -99,7 +116,7 @@ export function Portfolio() {
                                         <div className="view-project-button">
                                             <NavLink to={`/portfolio/${data.id}`} className='link-style'><button> View Project</button></NavLink>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                       <div className="portfolio-img 
                                     detail-img">
                                         <img src={data.image} alt={data.name} />

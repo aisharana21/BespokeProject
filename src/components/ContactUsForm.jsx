@@ -80,7 +80,7 @@ export function ContactUsFrom() {
                     <input type="email" name="email" onChange={handleChange} value={formInput.email} id="email" placeholder="Email" />
                     <p className="error-message">{error.email}</p>
                     <label>Phone Number (Optional)</label>
-                    <input type="number" onChange={handleChange} name="phone" id="phone" value={formInput.phone} placeholder="Phone" />
+                    <input type="number" onChange={handleChange} maxLength={11} name="phone" id="phone" value={formInput.phone} placeholder="Phone" />
                     <p className="error-message">{error.phone}</p>
 
                     <label>Your Message (Required)</label>

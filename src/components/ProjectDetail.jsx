@@ -3,6 +3,7 @@ import { projectDetailData } from "./data/projectDetailData";
 import { ProjectDetailOverview } from "./ProjectDetailOverview";
 import './CSS/DefaultStyle/page-heading.css';
 import { ProjectDetailOverviewFeatureCard } from './ProjectDetailOverviewFeatureCard';
+import { motion } from "framer-motion";
 
 export function ProjectDetail(){
      const { projectid } = useParams();
@@ -14,14 +15,32 @@ return project ? (
   <div className="project-detail-container">
  <div className="project-detail-description page-heading-description">
            <div className="project-detail-heading page-heading">
-            <h2>{project.name}</h2>
-            <h3>{project.catagory}
-</h3>
+            <motion.h2
+                initial={{opacity:0 ,scale: 0.8}}
+    whileInView={{opacity:1,scale: 1}}
+    transition={{ duration:1, ease: "easeOut"}}
+    viewport={{ once: true }}
+            
+            >{project.name}</motion.h2>
+            <motion.h3
+            
+                initial={{opacity:0 ,scale: 0.8}}
+    whileInView={{opacity:1,scale: 1}}
+    transition={{delay:0.2, duration:1, ease: "easeOut"}}
+    viewport={{ once: true }}
+            >{project.catagory}
+</motion.h3>
            </div>
-           <div className="project-detail-subheading page-subheading">
+           <motion.div
+               initial={{opacity:0 ,scale: 0.8}}
+    whileInView={{opacity:1,scale: 1}}
+    transition={{delay:0.3, duration:1, ease: "easeOut"}}
+    viewport={{ once: true }}
+           
+           className="project-detail-subheading page-subheading">
             {project.description}
 
-           </div>
+           </motion.div>
             </div>
             <ProjectDetailOverview project={project}/>
 <ProjectDetailOverviewFeatureCard project={project} />

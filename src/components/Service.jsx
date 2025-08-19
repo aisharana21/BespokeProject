@@ -18,7 +18,7 @@ className="hero-section">
 
 initial={{ opacity: 0, x: -100 }}   
   whileInView={{ opacity: 1, x: 0 }} 
-  transition={{ duration: 1, ease: "easeOut" }}
+  transition={{  duration: 1, ease: "easeOut" }}
   viewport={{ once: true }}   
 className="section-description
  hero-section-description
