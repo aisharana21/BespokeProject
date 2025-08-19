@@ -8,18 +8,23 @@ export function OurValues(){
 
     return(
 
-<div className="our-value-grid-container">
-<div className="our-values-description">
-    <motion.div
-     initial={{opacity:0 ,scale: 0.8}}
+<motion.div
+initial={{opacity:0 ,scale: 0.8}}
     whileInView={{opacity:1,scale: 1}}
     transition={{delay:0.5, duration:1.5, ease: "easeOut"}}
-    viewport={{ once: true }}   
+    viewport={{ once: true }}
+className="our-value-grid-container">
+<div
+
+
+className="our-values-description">
+    <div
+        
     className="values-heading">
         <h1>
          <span className='colored-text'>Crafted </span>To Easily Fit Into Everyday Life
         </h1>
-    </motion.div>
+    </div>
     <div className="values-description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </div>
@@ -69,6 +74,6 @@ export function OurValues(){
 </div> 
 
 
-</div>
+</motion.div>
     );
 }

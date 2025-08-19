@@ -4,6 +4,7 @@ import './CSS/DefaultStyle/text-color.css';
 import './CSS/DefaultStyle/page-heading.css';
 import starImage from '../assets/star.png'; 
 import ovalImage from '../assets/oval.png';
+import { motion } from 'framer-motion';
 export function Values(){
     const valueData= [
         {
@@ -77,7 +78,7 @@ export function Values(){
 
            <div
             className="value-overview-card-container ">
-            <div className="value-overview-card-grid card-grid">
+            <div  className="value-overview-card-grid card-grid">
                 {
                     valueData.map((data, index) => (
                         <div key={index} className="values-card card">
