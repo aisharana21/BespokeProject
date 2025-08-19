@@ -6,10 +6,17 @@ import { ServiceOverviewCard } from './ServiceOverviewCard';
 import { DetailServiceOverview } from './DetailServiceOverview';
 import { ChooseBespoke } from './ChooseBespoke';
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 export function Service (){
     return(
         <div className="service-container">
-<div className="hero-section">
+<motion.div 
+  initial={{ opacity: 0, x: -100 }}   // start 100px left of original position
+  whileInView={{ opacity: 1, x: 0 }} // animate to original position
+  transition={{ duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }}   
+
+className="hero-section">
 <div className="section-description
  hero-section-description
 ">
@@ -32,7 +39,7 @@ View Our Work              </NavLink></button></div>
 <div className="section-img hero-section-img">
     <img src={WomenImage} alt="" />
 </div>
-</div>
+</motion.div>
 <ServiceOverview/>
 <ServiceOverviewCard/>
 <DetailServiceOverview/>
