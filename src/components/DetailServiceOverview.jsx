@@ -3,7 +3,7 @@ import BrandIdentityMocking from '../assets/productdesignbranding.jpg';
 import BrandingMocking from '../assets/brandingmockup.jpg';
 import UIdesign from '../assets/uidesign.jpg';
 import './CSS/DefaultStyle/detail-overview.css';
-
+import { motion } from 'framer-motion';
 export function DetailServiceOverview() {
   const detailServiceData = [
     {
@@ -32,7 +32,13 @@ export function DetailServiceOverview() {
       <div className="detail-service-overview 
       detail-overview">
         {detailServiceData.map((data, index) => (
-          <div key={index} className="service-detail detail">
+          <motion.div
+          
+          initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{ duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+          key={index} className="service-detail detail">
            
             {index % 2 === 0 ? (
               <>
@@ -64,7 +70,7 @@ export function DetailServiceOverview() {
                 </div>
               </>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

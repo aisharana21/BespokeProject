@@ -1,5 +1,7 @@
 import './CSS/choose-bespoke.css'
 import ChooseBespokeImage from '../assets/choosebespoke.jpg';
+import { motion } from 'framer-motion';
+
 export function ChooseBespoke(){
     return(
 
@@ -15,11 +17,32 @@ export function ChooseBespoke(){
     </div>
     <div className="choose-bespoke-list">
  <ul>
-            <li>Designs that connect emotionally</li>
-            <li>Proven results with global brands</li>
-            <li>Innovative approach to every project</li>
-            <li>User-focused, business-driven strategies
-</li>
+            <motion.li
+            initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{delay:0.3, duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+            >Designs that connect emotionally</motion.li>
+            <motion.li
+            initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{delay:0.4, duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+            >Proven results with global brands</motion.li>
+            <motion.li
+            initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{delay:0.5, duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+            >Innovative approach to every project</motion.li>
+            <motion.li
+            
+            initial={{ opacity: 0, x: -100 }}   
+  whileInView={{ opacity: 1, x: 0 }} 
+  transition={{delay:0.6, duration: 1, ease: "easeOut" }}
+  viewport={{ once: true }} 
+            >User-focused, business-driven strategies
+</motion.li>
         </ul>
     </div>
        
