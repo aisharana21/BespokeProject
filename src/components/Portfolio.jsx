@@ -11,7 +11,21 @@ import { motion } from 'framer-motion';
 
 
 export function Portfolio() {
+const heroSectionVariant={
+    hidden:{
+        opacity:0,
+        x: -100 
+  },
+    visible:{
+opacity: 1,
+ x: 0,
+transition:{duration: 1, 
+ease: "easeOut"
+}
 
+    }
+}       
+   
     const portfolioData = [
         {
             id: "20250730-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
@@ -43,9 +57,9 @@ export function Portfolio() {
         <div className="portfolio-container">
             <div className="hero-section">
                 <motion.div
-                    initial={{ opacity: 0, x: -100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
+                variants={heroSectionVariant}
+                    initial='hidden'
+                    whileInView='visible'
                     viewport={{ once: true }}
                     className="portfolio-description
    hero-section-description
