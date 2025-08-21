@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import './CSS/contact-us.css';
 import './CSS/DefaultStyle/error-message.css';
-
+import { db } from '../../firebase';
+import { collection , addDoc} from 'firebase/firestore';
+// import { col } from 'framer-motion/client';
 export function ContactUsFrom() {
 
     const [formInput, setFormInput] = useState({
@@ -26,6 +28,7 @@ export function ContactUsFrom() {
     useEffect(() => {
         if (Object.keys(error).length === 0 && submit) {
             setFormSubmitMessage("Your Message is Submitted Successfully");
+            contactFormInput();
             setTimeout(() => {
                 setFormSubmitMessage("");
             }, 2000);
@@ -56,17 +59,25 @@ export function ContactUsFrom() {
             errors.email = "Enter Email"
 
         }
-        if (Number(input.phone) < 11) {
-            errors.phone = "Phone number must be at least 11 digits "
-
-        }
-        else if (!/^\d+$/.test(input.phone)) {
-            errors.phone = "Phone number must contain only digits";
-        }
+              if (input.phone) {
+    if (Number(input.phone) && input.phone.length < 11) {
+        errors.phone = "Phone number must be at least 11 digits";
+    } else if (!/^\d+$/.test(input.phone)) {
+        errors.phone = "Phone number must contain only digits";
+    }
+}
         if (!input.message) {
             errors.message = "Enter your message!";
         }
         return errors;
+    }
+    const contactFormInput=async ()=>{
+     await addDoc(collection(db, 'userMessages'),{
+             username: formInput.username,
+              email: formInput.email,
+               phone: formInput.phone,
+                message: formInput.message
+        })
     }
     return (
         <div className="contact-form-container">
@@ -80,7 +91,7 @@ export function ContactUsFrom() {
                     <input type="email" name="email" onChange={handleChange} value={formInput.email} id="email" placeholder="Email" />
                     <p className="error-message">{error.email}</p>
                     <label>Phone Number (Optional)</label>
-                    <input type="number" onChange={handleChange} maxLength={11} name="phone" id="phone" value={formInput.phone} placeholder="Phone" />
+                    <input type="number" onChange={handleChange} maxLength={12} name="phone" id="phone" value={formInput.phone} placeholder="Phone" />
                     <p className="error-message">{error.phone}</p>
 
                     <label>Your Message (Required)</label>

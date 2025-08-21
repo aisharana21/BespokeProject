@@ -1,6 +1,7 @@
 import './CSS/request-quote-form.css'
 import './CSS/DefaultStyle/error-message.css';
-
+import { db } from '../../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 import { useState,useEffect } from 'react';
 export function RequestQuoteForm() {
     const [formInput, setFormInput] = useState({
@@ -23,6 +24,7 @@ export function RequestQuoteForm() {
 
  useEffect(() => {
    if (Object.keys(error).length === 0 && submit) {
+    requestQuoteInput();
       setFormSubmitMessage("Form is Submitted Successfully");
       setTimeout(() => {
               setFormSubmitMessage("");
@@ -65,17 +67,29 @@ export function RequestQuoteForm() {
         if (!input.projecttype) {
             errors.projecttype = "Enter your project type"
         }
-        if (Number(input.phone) < 11) {
-            errors.phone = "Phone number must be at least 11 digits "
+       if (input.phone) {
+    if (Number(input.phone) && input.phone.length < 11) {
+        errors.phone = "Phone number must be at least 11 digits";
+    } else if (!/^\d+$/.test(input.phone)) {
+        errors.phone = "Phone number must contain only digits";
+    }
+}
 
-        }
-        else if (!/^\d+$/.test(input.phone)) {
-            errors.phone = "Phone number must contain only digits";
-        }
         return errors;
     }
 
-
+const requestQuoteInput = async ()=>{
+await addDoc(collection(db, 'userRequestQuote'),{
+     username: formInput.username,
+      email: formInput.email,
+      phone: formInput.phone,
+      company: formInput.company,
+      projecttype: formInput.projecttype,
+      budget: formInput.budget,
+      timeline: formInput.timeline,
+      details: formInput.details
+})
+}
 
     return (
         <div className="request-quote-form-container">
