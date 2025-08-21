@@ -12,6 +12,8 @@ import { RequestQuote } from './components/RequestQuote'
 import { ProjectDetail } from './components/ProjectDetail'
 import { PrivacyPolicy } from './components/PrivacyPolicy'
 import { TermsAndCondition } from './components/TermsAndCondition'
+import {SignInUser} from './components/SignInUser'
+
 function App() {
   return (<>
     <Navbar />
@@ -60,7 +62,10 @@ function App() {
       <Route
         path='/termsandcondition'
         element={<TermsAndCondition/>}
-
+      />
+      <Route
+        path='/signin'
+        element={<SignInUser/>}
       />
 
       

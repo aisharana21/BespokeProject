@@ -81,7 +81,7 @@
 //   return (
 //     <div className="nav-container">
 //       <div className="nav">
-      
+
 //         <div className="brand-name">
 //           <span className='logo-image'><img src={LogoImage} alt="" /></span>  
 //           Bespoke
@@ -109,6 +109,7 @@
 import './CSS/navbar.css';
 import MenuImage from '../assets/menu.png';
 import LogoImage from '../assets/logo.png';
+import User from '../assets/user-30.png';
 import { NavLink } from "react-router-dom";
 import { useState } from 'react';
 
@@ -128,12 +129,12 @@ export function Navbar() {
     <div className="nav-container">
       <div className="nav">
         <div className="brand-name">
-          
+
           <span className='logo-image'>
             <img src={LogoImage} alt="logo" />
-          </span>  
-      
-      <NavLink to="/" className='link-style'>Bespoke</NavLink>
+          </span>
+
+          <NavLink to="/" className='link-style'>Bespoke</NavLink>
         </div>
 
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -144,8 +145,8 @@ export function Navbar() {
         <div className={`menu ${menuOpen ? 'open' : ''}`}>
           <ul>
             <li>
-              <NavLink 
-                to="/" 
+              <NavLink
+                to="/"
                 className={getNavColor}
                 onClick={handleLinkClick}
               >
@@ -153,8 +154,8 @@ export function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink 
-                to="/service" 
+              <NavLink
+                to="/service"
                 className={getNavColor}
                 onClick={handleLinkClick}
               >
@@ -162,8 +163,8 @@ export function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink 
-                to='/portfolio' 
+              <NavLink
+                to='/portfolio'
                 className={getNavColor}
                 onClick={handleLinkClick}
               >
@@ -171,8 +172,8 @@ export function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink 
-                to="/contactus" 
+              <NavLink
+                to="/contactus"
                 className={getNavColor}
                 onClick={handleLinkClick}
               >
@@ -180,6 +181,16 @@ export function Navbar() {
               </NavLink>
             </li>
           </ul>
+
+
+        </div>
+        <div className="sign-in">
+          <NavLink
+            to="/signin"
+          >
+            <img src={User} alt="" />
+          </NavLink>
+
         </div>
       </div>
     </div>
