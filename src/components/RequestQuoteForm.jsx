@@ -173,9 +173,9 @@ export function RequestQuoteForm() {
 
 
                         >
-                            <option disabled value="">Select budget</option>
+                            <option disabled>Select budget</option>
                             <option >$1,000-$5,000</option>
-                            <option v>$5,000-$10,000</option>
+                            <option >$5,000-$10,000</option>
                             <option>Above $10,000</option>
                         </select>
                     </div>

@@ -12,7 +12,7 @@ export function ContactUsFrom() {
     const [submit, setSubmit] = useState(false);
     const [formSubmitMessage, setFormSubmitMessage] = useState('');
     const handleChange = (event) => {
-        console.log(event.target);
+        // console.log(event.target);
         const { name, value } = event.target;
         setFormInput({ ...formInput, [name]: value });
         console.log(formInput)
