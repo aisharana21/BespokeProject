@@ -13,6 +13,7 @@ import { ProjectDetail } from './components/ProjectDetail'
 import { PrivacyPolicy } from './components/PrivacyPolicy'
 import { TermsAndCondition } from './components/TermsAndCondition'
 import {SignInUser} from './components/SignInUser'
+import {CreateAccount} from './components/CreateAccount'
 
 function App() {
   return (<>
@@ -66,6 +67,10 @@ function App() {
       <Route
         path='/signin'
         element={<SignInUser/>}
+      />
+      <Route
+        path='/createaccount'
+        element={<CreateAccount/>}
       />
 
       
