@@ -6,15 +6,15 @@ export function RequestQuote(){
   const containerVariant={
 hidden:{
   opacity:0 ,
-  // scale: 0.8
+
 },
 visible:{
   opacity:1,
-  // scale: 1,
+
   transition:{
     duration:1,
      ease: "easeOut",
-    //  staggerChildren:0.2
+  
   }
 }
 

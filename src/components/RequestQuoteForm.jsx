@@ -2,14 +2,14 @@ import './CSS/request-quote-form.css'
 import './CSS/DefaultStyle/error-message.css';
 import { db } from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore';
-import { useState,useEffect } from 'react';
+import { useState} from 'react';
 export function RequestQuoteForm() {
     const [formInput, setFormInput] = useState({
         username: "", email: "", phone: "", company: "", projecttype: "",
         budget: "", timeline: "", details: ""
     });
     const [error, setErrors] = useState({});
-    const [submit, setSubmit]= useState(false);
+
     const [formSubmitMessage,setFormSubmitMessage]=useState('');
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -18,12 +18,13 @@ export function RequestQuoteForm() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors(validate(formInput));
-        setSubmit(true);
-    }
+         const validationErrors = validate(formInput);
+  setErrors(validationErrors);
 
- useEffect(() => {
-   if (Object.keys(error).length === 0 && submit) {
+       
+    
+
+if ( Object.keys(validationErrors).length === 0  ) {
     requestQuoteInput();
       setFormSubmitMessage("Form is Submitted Successfully");
       setTimeout(() => {
@@ -44,7 +45,9 @@ export function RequestQuoteForm() {
               setFormSubmitMessage("");
 
     }
-}, [error,submit])
+    }
+
+
 
     const validate = (input) => {
       
@@ -54,13 +57,12 @@ export function RequestQuoteForm() {
         if (!input.username) {
             errors.username = "Enter Username"
         }
-        if (!input.email) {
-            errors.email = "Enter Email"
-        }
-        else if (!regex.test(input.email)) {
-            errors.email = "Enter Valid Email"
+     if (!input.email) {
+    errors.email = "Enter Email"
+} else if (!regex.test(input.email)) {
+    errors.email = "Enter Valid Email"
+}
 
-        }
         if (!input.budget) {
             errors.budget = "Enter your budget"
         }
@@ -94,7 +96,7 @@ await addDoc(collection(db, 'userRequestQuote'),{
     return (
         <div className="request-quote-form-container">
             <div className="request-quote">
-                <form onSubmit={handleSubmit}
+                <form onSubmit={handleSubmit} noValidate
                     className="request-quote-form">
                     <div className="feild">
                         <label>

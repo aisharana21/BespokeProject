@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './CSS/contact-us.css';
 import './CSS/DefaultStyle/error-message.css';
 import { db } from '../../firebase';
@@ -11,22 +11,20 @@ export function ContactUsFrom() {
     });
     const [error, setErrors] = useState({});
 
-    const [submit, setSubmit] = useState(false);
+ 
     const [formSubmitMessage, setFormSubmitMessage] = useState('');
     const handleChange = (event) => {
-        // console.log(event.target);
+        
         const { name, value } = event.target;
         setFormInput({ ...formInput, [name]: value });
-        console.log(formInput)
+
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors(validate(formInput));
-        setSubmit(true);
-    }
-
-    useEffect(() => {
-        if (Object.keys(error).length === 0 && submit) {
+         const validationErrors = validate(formInput);
+  setErrors(validationErrors);
+ 
+      if (Object.keys(validationErrors).length === 0) {
             setFormSubmitMessage("Your Message is Submitted Successfully");
             contactFormInput();
             setTimeout(() => {
@@ -43,7 +41,9 @@ export function ContactUsFrom() {
             setFormSubmitMessage("");
 
         }
-    }, [error, submit])
+    }
+
+   
     const validate = (input) => {
         console.log(input);
         const errors = {}
@@ -56,7 +56,7 @@ export function ContactUsFrom() {
             errors.email = "Enter Email"
         }
         else if (!regex.test(input.email)) {
-            errors.email = "Enter Email"
+            errors.email = "Enter Valid Email"
 
         }
               if (input.phone) {
@@ -85,13 +85,21 @@ export function ContactUsFrom() {
             <div className="contact-form">
                 <form className='contact-us-form' onSubmit={handleSubmit}>
                     <label>Full Name (Required)</label>
-                    <input type="text" name="username" id="name" value={formInput.username} onChange={handleChange} placeholder="Name" />
+                    <input type="text" name="username" id="name"
+                     value={formInput.username} 
+                     onChange={handleChange} placeholder="Name" />
+                     
                     <p className="error-message">{error.username}</p>
                     <label>Email (Required)</label>
-                    <input type="email" name="email" onChange={handleChange} value={formInput.email} id="email" placeholder="Email" />
+                    <input type="email" 
+                    name="email" onChange={handleChange}
+                     value={formInput.email} id="email" placeholder="Email" />
                     <p className="error-message">{error.email}</p>
                     <label>Phone Number (Optional)</label>
-                    <input type="number" onChange={handleChange} maxLength={12} name="phone" id="phone" value={formInput.phone} placeholder="Phone" />
+                    <input type="number"
+                     onChange={handleChange}
+                      maxLength={12}
+                       name="phone" id="phone" value={formInput.phone} placeholder="Phone" />
                     <p className="error-message">{error.phone}</p>
 
                     <label>Your Message (Required)</label>
