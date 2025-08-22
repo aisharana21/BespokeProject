@@ -68,6 +68,25 @@
   font-weight: 500;
 }
 
+.sign-in-link span{
+ color: white;
+
+}
+.sign-in-link{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+    background-color: #FF6C2D;
+ padding: 8px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+
+}
+.sign-in-link:hover{
+  background-color:#f7763f;
+}
 @media (max-width: 500px) {
   .nav {
     flex-direction: row;

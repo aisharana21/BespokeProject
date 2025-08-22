@@ -109,7 +109,7 @@
 import './CSS/navbar.css';
 import MenuImage from '../assets/menu.png';
 import LogoImage from '../assets/logo.png';
-import User from '../assets/user-30.png';
+import User from '../assets/user-24.png';
 import { NavLink } from "react-router-dom";
 import { useState } from 'react';
 
@@ -180,18 +180,17 @@ export function Navbar() {
                 Contact Us
               </NavLink>
             </li>
-          </ul>
-
-
-        </div>
-        <div className="sign-in">
-          <NavLink
+            <li>
+               <NavLink className="sign-in-link"
             to="/signin"
           >
             <img src={User} alt="" />
+            <span>Sign In</span>
           </NavLink>
-
+            </li>
+          </ul>
         </div>
+       
       </div>
     </div>
   );
