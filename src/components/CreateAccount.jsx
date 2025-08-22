@@ -1,36 +1,94 @@
-
+import { useState } from 'react';
 import './CSS/DefaultStyle/user-account.css';
 
 export function CreateAccount() {
-  return (
+  const [inputValues, setInputValues]= useState({
+    username:"", email:"", password:""
+  })
+  const [checkErros, setCheckErros]= useState({})
+
+
+  const handleInput=(event)=>{
+const {name, value}= event.target;
+setInputValues({...inputValues, [name]:value})
+  }
+
+
+
+
+  const handleSubmit=(event)=>{
+  event.preventDefault();
+setCheckErros(validateErrors());
+  }
+  const validateErrors=()=>{
+const errors={}
+ const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if(!inputValues.username){
+    errors.username="Enter username";
+}
+if (!inputValues.email) {
+            errors.email = "Enter Email"
+        }
+        else if (!regex.test(inputValues.email)) {
+            errors.email = "Enter Valid Email"
+
+        }
+    if(inputValues.password){
+        if(inputValues.password.length <8){
+            errors.password = "Password must be atleast of 8 characters"
+        }
+
+    }
+    else{
+        errors.password="Enter Password";
+    }
+    return errors;
+  }
+    return (
       <>
       <h1>Create Account</h1>
-      <div className="create-account-container account-container">
-<div className="create-account-form-container account-container-form">
+      <div className="create-account-container
+       account-container">
+<div className="create-account-form-container
+ account-container-form">
 
 
-        <form className='create-account-form account-form' >
+        <form onSubmit={handleSubmit}
+         className='create-account-form
+         account-form' >
           <div className="sign-in-username account-input">    
             <label>Username</label>
             <input
-             type="name" name="name" id="name" 
-             placeholder="Your Full Name" />
-            <p className="error-message"></p></div>
-          <div className="create-account-email account-input">    
+             type="name" name="username" id="name" 
+             placeholder="Your Full Name"
+             value={inputValues.username}
+             onChange={handleInput} 
+             />
+            <p className="error-message">{checkErros.username}</p></div>
+          <div className="create-account-email 
+          account-input">    
             <label>Email</label>
             <input
             
-             type="email" name="email" id="email" placeholder="Email" />
-            <p className="error-message"></p></div>
+             type="email" name="email"
+              id="email" placeholder="Email"
+              value={inputValues.email}
+             onChange={handleInput} 
+              />
+            <p className="error-message">{checkErros.email}</p></div>
 
-          <div className="create-account-password account-input">
+          <div className="create-account-password
+           account-input">
                 <label>Password</label>
           <input  
-            
+            maxLength={10}
            type="password"
             name="password" id="password"
-             placeholder="Password" />
-          <p className="error-message"></p>
+             placeholder="Password"
+               value={inputValues.password}
+             onChange={handleInput} 
+             />
+          <p className="error-message">{checkErros.password}</p>
           </div>
       
 
