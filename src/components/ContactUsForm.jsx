@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './CSS/contact-us.css';
 import './CSS/DefaultStyle/error-message.css';
-import { db } from '../../firebase';
+import { db } from './Context/firebase';
 import { collection , addDoc} from 'firebase/firestore';
 // import { col } from 'framer-motion/client';
 export function ContactUsFrom() {
@@ -21,10 +21,10 @@ export function ContactUsFrom() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-         const validationErrors = validate(formInput);
-  setErrors(validationErrors);
+         const validateErrors = validate(formInput);
+  setErrors(validateErrors);
  
-      if (Object.keys(validationErrors).length === 0) {
+      if (Object.keys(validateErrors).length === 0) {
             setFormSubmitMessage("Your Message is Submitted Successfully");
             contactFormInput();
             setTimeout(() => {
@@ -33,7 +33,7 @@ export function ContactUsFrom() {
             setFormInput({
                 username: "",
                 email: "",
-                phone: "",
+                phone:"",
                 message: "",
             });
         }

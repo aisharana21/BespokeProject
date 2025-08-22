@@ -112,11 +112,23 @@ import LogoImage from '../assets/logo.png';
 import User from '../assets/user-24.png';
 import { NavLink } from "react-router-dom";
 import { useState } from 'react';
+import { useFirebase } from './Context/firebase';
+
+// import{loi}
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+const firebase= useFirebase();
   // function for active link class
+  const logout=async ()=>{
+    try {
+      await firebase.logOutUser();
+    } catch (error) {
+            alert(`Error: ${error.message}`);
+
+    }
+console.log("logout")
+  }
   const getNavColor = ({ isActive }) => {
     return isActive ? 'link-style active' : 'link-style';
   };
@@ -180,13 +192,16 @@ export function Navbar() {
                 Contact Us
               </NavLink>
             </li>
-            <li>
-               <NavLink className="sign-in-link"
+            <li > {firebase.user ? (<div className="sign-in-link" onClick={logout}><img src={User} alt="" />
+             <span>Logout</span></div> ):(<NavLink className="sign-in-link"
             to="/signin"
           >
             <img src={User} alt="" />
             <span>Sign In</span>
-          </NavLink>
+          </NavLink>)
+          
+          }
+               
             </li>
           </ul>
         </div>

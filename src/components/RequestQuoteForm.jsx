@@ -1,6 +1,6 @@
 import './CSS/request-quote-form.css'
 import './CSS/DefaultStyle/error-message.css';
-import { db } from '../../firebase';
+import { db } from './Context/firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { useState} from 'react';
 export function RequestQuoteForm() {
@@ -18,13 +18,13 @@ export function RequestQuoteForm() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-         const validationErrors = validate(formInput);
-  setErrors(validationErrors);
+         const validateErrors = validate(formInput);
+  setErrors(validateErrors);
 
        
     
 
-if ( Object.keys(validationErrors).length === 0  ) {
+if ( Object.keys(validateErrors).length === 0  ) {
     requestQuoteInput();
       setFormSubmitMessage("Form is Submitted Successfully");
       setTimeout(() => {
