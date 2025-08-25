@@ -3,6 +3,7 @@ import './CSS/DefaultStyle/user-account.css';
 import { useFirebase } from './Context/firebase';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { SignInGoogle } from './SignInGoogle';
 
 export function SignInUser() {
   const navigate= useNavigate();
@@ -24,14 +25,14 @@ const handleSubmit= (e)=>{
 const validateErrors= validate();
 setErrorMessage(validateErrors);
   if (Object.keys(validateErrors).length === 0) {
-           
+             signIn();
+
             setInputValues({
                 email: "",
                 password: "",
               
             });
         }
-  signIn();
 }
 const validate=()=>{
   const errors={};
@@ -106,6 +107,7 @@ const signIn=async ()=>{
       <NavLink className="create-account-link" 
       to="/createaccount">Create Account</NavLink>
    </div>
+   <SignInGoogle/>
         </div> 
       </div>
     </>

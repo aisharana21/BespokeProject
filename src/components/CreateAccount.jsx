@@ -3,6 +3,7 @@ import './CSS/DefaultStyle/user-account.css';
 import { auth } from './Context/firebase';
 import { useFirebase } from './Context/firebase';
 import { useNavigate } from 'react-router-dom';
+import { SignInGoogle } from './SignInGoogle';
 // import { createUserWithEmailAndPassword } from 'firebase/auth';
 export function CreateAccount() {
 const navigate= useNavigate();
@@ -27,7 +28,8 @@ const [showPassword, setShowPassword]= useState(false);
         const validateErrors = validate();
         setCheckErros(validateErrors)
   if (Object.keys(validateErrors).length === 0) {
-           
+                 accountCreation();
+
             setInputValues({
                 username: "",
                 email: "",
@@ -35,7 +37,6 @@ const [showPassword, setShowPassword]= useState(false);
               
             });
         }
-      accountCreation();
     }
     const validate = () => {
         const errors = {}
@@ -86,7 +87,7 @@ setCheckErros((prevError) => ({ ...prevError, error: error.message }));
  account-container-form">
 
 
-                    <form onSubmit={handleSubmit}
+                    <form onSubmit={handleSubmit} noValidate
                         className='create-account-form
          account-form' >
                         <div className="sign-in-username account-input">
@@ -139,10 +140,7 @@ setCheckErros((prevError) => ({ ...prevError, error: error.message }));
                             type="submit">Create Account</button>
 
                     </form>
-                    <div className="create-account-options">
-                        <span>Or</span>
-                        <span>Sign In with Google</span>
-                    </div>
+                    <SignInGoogle/>
                 </div>
             </div>
         </>
