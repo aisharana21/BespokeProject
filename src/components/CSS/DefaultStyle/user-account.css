@@ -61,18 +61,6 @@ cursor: pointer;
 .create-account-options{
     margin-top: 5px;
 }
-.create-account-options span{
-    font-size: 13px;
-}
-.create-account-link{
-font-size: 13px;
-margin-left: 3px;
-text-decoration: underline;
-transition:   color 0.3s ease-in-out;;
-}
-.create-account-link:hover{
-    color: #ff6c2d;
-}
 
 .show-password {
     display: flex;
@@ -98,4 +86,46 @@ transition:   color 0.3s ease-in-out;;
 
 .show-password:hover span {
     color: #ff6c2d;
+}
+.create-account-options{
+    margin-bottom: 5px;
+    text-align: center;
+}
+.create-account-options span{
+    font-size: 13px;
+}
+.create-account-link{
+font-size: 13px;
+margin-left: 3px;
+text-decoration: underline;
+transition:   color 0.3s ease-in-out;;
+}
+.create-account-link:hover{
+    color: #ff6c2d;
+}
+.sign-in-with-google{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+        font-size: 13px;
+      
+
+}
+.sign-in-option-btn{
+    border: none;
+      margin-top: 8px;
+text-align: center;
+    width: 60px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.sign-in-option-btn img{
+    width: 24px;
+}
+.sign-in-option-btn:hover{
+    background-color: #d8d1d1;
+
 }

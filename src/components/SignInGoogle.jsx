@@ -1,10 +1,25 @@
-
+import { useFirebase } from './Context/firebase';
 import GoogleIcon from '../assets/google-icon-30.png';
+import { useNavigate } from 'react-router-dom';
+
 export function SignInGoogle() {
+    const navigate= useNavigate();
+
+    const firebase= useFirebase();
+    const handleSignInWithGoogle=async ()=>{
+try {
+    await firebase.signInUserWithGoogle();
+     navigate("/");
+
+} catch (error) {
+    console.log(error);
+}
+    }
   return (
-    <div>
+    <div className='sign-in-with-google'>
      <p>Or Sign In with</p>
-     <div className="sign-in-option-img">   <img src={GoogleIcon} alt="" /></div>
+     <button onClick={handleSignInWithGoogle} className="sign-in-option-btn">  
+         <img src={GoogleIcon} alt="" /></button>
 
     </div>
   )

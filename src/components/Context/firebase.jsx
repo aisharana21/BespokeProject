@@ -2,7 +2,10 @@
 import { createContext, useContext ,useEffect,useState} from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged,signOut, signInWithEmailAndPassword } from "firebase/auth";
+import {getAuth,GoogleAuthProvider ,
+   createUserWithEmailAndPassword, onAuthStateChanged,
+   signOut, signInWithEmailAndPassword,signInWithPopup } 
+   from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyCFJpbmrAzPHHUNEC06aT59c_E36_q13P0",
   authDomain: "bespoke-693a6.firebaseapp.com",
@@ -17,6 +20,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
+const googleAuth = new GoogleAuthProvider();
 const FireBaseContext = createContext(null)
 //he used firestore
 
@@ -46,10 +50,13 @@ return signInWithEmailAndPassword(auth, email, password);
 const logOutUser= ()=>{
     return signOut(auth);
 }
-
+const signInUserWithGoogle=()=>{
+return signInWithPopup(auth,googleAuth);
+}
 
 return(
-<FireBaseContext.Provider value = {{createUserAccount, user,logOutUser, signInUser}  }>
+<FireBaseContext.Provider value = {{createUserAccount, user,
+  logOutUser, signInUser,signInUserWithGoogle}  }>
     {children}
 </FireBaseContext.Provider>
 );

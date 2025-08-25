@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './CSS/DefaultStyle/user-account.css';
-import { auth } from './Context/firebase';
+// import { auth } from './Context/firebase';
 import { useFirebase } from './Context/firebase';
 import { useNavigate } from 'react-router-dom';
 import { SignInGoogle } from './SignInGoogle';
@@ -66,9 +66,9 @@ const [showPassword, setShowPassword]= useState(false);
         try {
        
   await firebase.createUserAccount( inputValues.email,inputValues.password)
-   const user = auth.currentUser;
+//    const user = auth.currentUser;
  navigate("/")
-   console.log(user);  
+//    console.log(user);  
     }
          catch (error) {
 setCheckErros((prevError) => ({ ...prevError, error: error.message }));
