@@ -130,5 +130,7 @@ text-align: center;
 
 }
 .account-container h1{
-    margin: 5px;
+padding: 10px;
+}
+.account-container{
 }
