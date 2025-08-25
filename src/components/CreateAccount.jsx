@@ -80,9 +80,10 @@ setCheckErros((prevError) => ({ ...prevError, error: error.message }));
     }
     return (
         <>
-            <h1>Create Account</h1>
             <div className="create-account-container
        account-container">
+                    <h1>Create Account</h1>
+
                 <div className="create-account-form-container
  account-container-form">
 
