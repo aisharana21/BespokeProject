@@ -5,8 +5,9 @@ import { useNavigate } from 'react-router-dom';
 export function SignInGoogle() {
     const navigate= useNavigate();
 
-    const firebase= useFirebase();
-    const handleSignInWithGoogle=async ()=>{
+    const firebase= useFirebase()
+    const handleSignInWithGoogle=async (e)=>{
+        e.preventDefault();
 try {
     await firebase.signInUserWithGoogle();
      navigate("/");
