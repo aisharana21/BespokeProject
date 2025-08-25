@@ -193,7 +193,7 @@ console.log("logout")
               </NavLink>
             </li>
             <li > {firebase.user ? (<div className="sign-in-link" onClick={logout}><img src={User} alt="" />
-             <span>Logout</span></div> ):(<NavLink className="sign-in-link"
+             <span>Logout</span></div> ):(<NavLink  onClick={handleLinkClick} className="sign-in-link"
             to="/signin"
           >
             <img src={User} alt="" />

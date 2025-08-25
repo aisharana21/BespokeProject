@@ -30,16 +30,19 @@ export const useFirebase =()=>{
 
 export const FirebaseProvider =(({children})=>{
 const [user, setUser]= useState(false);
-useEffect(()=>{
-onAuthStateChanged(auth , (user)=>{
-    if(user){
-      
-        setUser(user)
-          console.log("user is signed in")
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setUser(user);
+    } else {
+      setUser(false);
     }
-    else{setUser(false)}
-},[])
-})
+  });
+
+  return () => unsubscribe();
+}, []);
+
+
 
 const createUserAccount = (email,password)=>{
 return createUserWithEmailAndPassword(auth,email,password)
