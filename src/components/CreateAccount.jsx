@@ -12,7 +12,7 @@ const navigate= useNavigate();
         username: "", email: "", password: ""
     })
     const [checkErros, setCheckErros] = useState({})
-
+const [showPassword, setShowPassword]= useState(false);
 
     const handleInput = (event) => {
         const { name, value } = event.target;
@@ -70,7 +70,8 @@ const navigate= useNavigate();
    console.log(user);  
     }
          catch (error) {
-            alert(error.message)
+setCheckErros((prevError) => ({ ...prevError, error: error.message }));
+           
         }
      
 
@@ -114,16 +115,24 @@ const navigate= useNavigate();
                             <label>Password</label>
                             <input
                                 maxLength={10}
-                                type="password"
+                                 type={showPassword ? "text" : "password"}
                                 name="password" id="password"
                                 placeholder="Password"
                                 value={inputValues.password}
                                 onChange={handleInput}
                             />
+                           <div className="show-password">
+                               <input
+                              
+                               type="checkbox" name="checkbox" id="checkbox"
+              onChange={() => setShowPassword(!showPassword)}
+            />
+            <span>ShowPassword</span>
+                           </div>
                             <p className="error-message">{checkErros.password}</p>
                         </div>
 
-
+                          <p className='error-message'>{checkErros.error}</p>
 
 
                         <button className='create-account-button account-button'

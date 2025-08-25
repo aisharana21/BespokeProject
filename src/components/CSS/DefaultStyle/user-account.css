@@ -17,6 +17,7 @@
     gap: 10px;
     border-bottom: 1px solid gray;
 
+
 }
 .account-input input{
       width: 100%;
@@ -39,7 +40,7 @@ display: block;
 margin-bottom: 8px;
 }
 .account-input {
-    height: 80px;
+    height: 90px;
 }
 .account-button{
     width: 100%;
@@ -68,5 +69,32 @@ text-decoration: underline;
 transition:   color 0.3s ease-in-out;;
 }
 .create-account-link:hover{
+    color: #ff6c2d;
+}
+.create-account-password{
+    margin-bottom: 10px;
+}
+.show-password {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    margin-top: 5px;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+}
+
+.show-password input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #ff6c2d; 
+}
+
+.show-password span {
+    transition: color 0.3s ease-in-out;
+}
+
+.show-password:hover span {
     color: #ff6c2d;
 }

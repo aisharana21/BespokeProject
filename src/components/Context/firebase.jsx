@@ -2,7 +2,7 @@
 import { createContext, useContext ,useEffect,useState} from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged,signOut } from "firebase/auth";
+import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged,signOut, signInWithEmailAndPassword } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyCFJpbmrAzPHHUNEC06aT59c_E36_q13P0",
   authDomain: "bespoke-693a6.firebaseapp.com",
@@ -40,13 +40,16 @@ onAuthStateChanged(auth , (user)=>{
 const createUserAccount = (email,password)=>{
 return createUserWithEmailAndPassword(auth,email,password)
 }
+const signInUser= (email,password)=>{
+return signInWithEmailAndPassword(auth, email, password);
+}
 const logOutUser= ()=>{
     return signOut(auth);
 }
 
 
 return(
-<FireBaseContext.Provider value = {{createUserAccount, user,logOutUser}  }>
+<FireBaseContext.Provider value = {{createUserAccount, user,logOutUser, signInUser}  }>
     {children}
 </FireBaseContext.Provider>
 );
