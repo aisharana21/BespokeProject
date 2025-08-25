@@ -6,8 +6,7 @@ export function SignInGoogle() {
     const navigate= useNavigate();
 
     const firebase= useFirebase()
-    const handleSignInWithGoogle=async (e)=>{
-        e.preventDefault();
+    const handleSignInWithGoogle=async ()=>{
 try {
     await firebase.signInUserWithGoogle();
      navigate("/");
