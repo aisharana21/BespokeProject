@@ -2,8 +2,25 @@ import { faqData } from "./data/faqdata";
 import ArrowButton from '../assets/arrow-24.png';
 import { useState } from "react";
 import './CSS/faq.css';
+import { motion } from "framer-motion";
 
 export function FAQ() {
+  const faqContainerariant= {
+    hidden:{ 
+      opacity: 0,
+       x: -100       
+    },
+    visible:{
+       opacity: 1,
+        x: 0,
+        transition:{
+          delay: 0.2,
+           duration: 1,
+            ease: "easeOut"
+        }
+    }
+
+  }
   const [isActiveId, setIsActiveId] = useState(false);
 
   const showFaqAnswer = (id) => {
@@ -17,8 +34,14 @@ export function FAQ() {
         <div className={isActiveId === data.id ? "faq active" : "faq"} key={data.id}>
           <div className="faq-question-answer">
             <div className="tab-title">
-              <h5>  { data.question }
-</h5>
+              <motion.h5
+              variants={faqContainerariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{once:true}}
+              >
+                  { data.question }
+</motion.h5>
               <button
                 onClick={() => showFaqAnswer(data.id)}
                 className="tab-open-arrow"
