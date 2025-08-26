@@ -12,8 +12,9 @@ export const detailServiceData = [
   heading:
     "We transform your concepts into functional, high-quality designs through research, 3D modeling, and prototyping.",
   list: [
-    "Designs that connect with users",
     "Optimized materials and production processes",
+    "Designs that connect with users",
+    
     "Rapid prototyping for fast feedback",
     "Balanced aesthetics and functionality",
     "Sustainable solutions for modern products"
