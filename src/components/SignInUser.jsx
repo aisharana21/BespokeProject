@@ -92,10 +92,10 @@ const signIn=async ()=>{
                            </div>
           <p className="error-message">{errorMessage.password}</p>
          
-         
+         <p className= 'error-message'>{errorMessage.error}</p>
+
           </div>
       
-<p className= 'error-message'>{errorMessage.error}</p>
 
 
           <button className='sign-in-button account-button'
