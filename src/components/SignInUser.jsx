@@ -54,7 +54,7 @@ const signIn=async ()=>{
      navigate("/")
 
   }catch(error){
-  
+  error.message="Invalid Email or Password";
  setErrorMessage((prevError)=>({...prevError, error:error.message}));
   }
 
