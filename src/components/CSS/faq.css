@@ -27,11 +27,15 @@
 
 .tab-title {
     width: 100%;
+
     padding: 15px;
     display: flex;
     align-items: center; 
     justify-content: space-between; 
     cursor: pointer;
+}
+.tab-title h5{
+    max-width: 70%;
 }
 
 .tab-open-arrow {
