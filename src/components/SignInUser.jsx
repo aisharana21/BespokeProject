@@ -26,19 +26,18 @@ const validateErrors= validate();
 setErrorMessage(validateErrors);
   if (Object.keys(validateErrors).length === 0) {
              signIn();
-
-            setInputValues({
-                email: "",
-                password: "",
-              
-            });
         }
 }
 const validate=()=>{
   const errors={};
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if(!inputValues.email){
     errors.email="Enter Email";
   }
+  else if (!regex.test(inputValues.email)) {
+            errors.email = "Enter Valid Email"
+
+        }
   if(!inputValues.password){
   errors.password="Enter Password";
   }
@@ -69,14 +68,14 @@ const signIn=async ()=>{
 
 
         <form className='sign-in-form account-form' onSubmit={handleSubmit} >
-          <div className="sign-in-email account-input">    
+          <div className="sign-in-email account-input account-input-email">    
             <label>Email</label>
             <input onChange={handleValues}
             value={inputValues.email}
              type="email" name="email" id="email" placeholder="Email" />
             <p className="error-message">{errorMessage.email}</p></div>
 
-          <div className="sign-in-password account-input">
+          <div className="sign-in-password account-input account-input-password">
                 <label>  Password</label>
           <input  onChange={handleValues}
             value={inputValues.password}
@@ -96,7 +95,7 @@ const signIn=async ()=>{
          
           </div>
       
-<p className='error-message'>{errorMessage.error}</p>
+<p className= 'error-message'>{errorMessage.error}</p>
 
 
           <button className='sign-in-button account-button'

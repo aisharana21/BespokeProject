@@ -30,12 +30,12 @@ const [showPassword, setShowPassword]= useState(false);
   if (Object.keys(validateErrors).length === 0) {
                  accountCreation();
 
-            setInputValues({
-                username: "",
-                email: "",
-                password: "",
+            // setInputValues({
+            //     username: "",
+            //     email: "",
+            //     password: "",
               
-            });
+            // });
         }
     }
     const validate = () => {
@@ -71,8 +71,10 @@ const [showPassword, setShowPassword]= useState(false);
 //    console.log(user);  
     }
          catch (error) {
+       
+            error.message="Email is already in use"
 setCheckErros((prevError) => ({ ...prevError, error: error.message }));
-           
+           console.log(error)
         }
      
 
@@ -91,7 +93,7 @@ setCheckErros((prevError) => ({ ...prevError, error: error.message }));
                     <form onSubmit={handleSubmit} noValidate
                         className='create-account-form
          account-form' >
-                        <div className="sign-in-username account-input">
+                        <div className="sign-in-username account-input account-input-username">
                             <label>Username</label>
                             <input
                                 type="name" name="username" id="name"
@@ -101,7 +103,7 @@ setCheckErros((prevError) => ({ ...prevError, error: error.message }));
                             />
                             <p className="error-message">{checkErros.username}</p></div>
                         <div className="create-account-email 
-          account-input">
+          account-input account-input-email">
                             <label>Email</label>
                             <input
 
@@ -110,10 +112,10 @@ setCheckErros((prevError) => ({ ...prevError, error: error.message }));
                                 value={inputValues.email}
                                 onChange={handleInput}
                             />
-                            <p className="error-message">{checkErros.email}</p></div>
+                            <p className="error-message">{checkErros.email ? checkErros.email : checkErros.error}</p></div>
 
                         <div className="create-account-password
-           account-input">
+           account-input account-input-password">
                             <label>Password</label>
                             <input
                                 maxLength={10}
@@ -134,7 +136,7 @@ setCheckErros((prevError) => ({ ...prevError, error: error.message }));
                             <p className="error-message">{checkErros.password}</p>
                         </div>
 
-                          <p className='error-message'>{checkErros.error}</p>
+                          {/* <p className='error-message'>{checkErros.error}</p> */}
 
 
                         <button className='create-account-button account-button'

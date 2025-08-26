@@ -40,8 +40,12 @@ display: block;
 margin-bottom: 8px;
 }
 
-.account-input {
+.account-input-email, .account-input-username {
     height: 80px;
+}
+.account-input-password {
+    height: 100px;
+    
 }
 .account-button{
     width: 100%;
@@ -131,6 +135,4 @@ text-align: center;
 }
 .account-container h1{
 padding: 10px;
-}
-.account-container{
 }
