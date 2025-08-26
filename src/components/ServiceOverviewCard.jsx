@@ -3,6 +3,7 @@ import './CSS/DefaultStyle/card.css';
 import './CSS/service-overview-card.css'
 
 import { serviceData } from './data/serviceData';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 export function ServiceOverviewCard() {
@@ -26,8 +27,10 @@ export function ServiceOverviewCard() {
                             <div className="card-heading">{data.name}</div>
                             <div className="card-subheading">
                                 {data.subheading}
+                                
 
                             </div>
+                       
                         </div>
                     ))
 

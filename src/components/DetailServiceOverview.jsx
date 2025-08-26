@@ -12,13 +12,13 @@ export function DetailServiceOverview() {
       detail-overview">
         {detailServiceData.map((data, index) => (
           <motion.div
-          
-          initial={{ opacity: 0, x: -100 }}   
-  whileInView={{ opacity: 1, x: 0 }} 
-  transition={{ duration: 1, ease: "easeOut" }}
-  viewport={{ once: true }} 
-          key={index} className="service-detail detail">
-           
+
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            key={index} className="service-detail detail">
+
             {index % 2 === 0 ? (
               <>
                 <div className="service-img detail-img ">
@@ -30,12 +30,21 @@ export function DetailServiceOverview() {
                     <h2>{data.name}</h2>
                   </div>
                   <div className="service-subheading
-                  detail-subheading ">{data.heading}</div>
+                  detail-subheading ">{data.heading}
+                  </div>
+                    <div className="detail-list services-detail-list">
+                    <h3>Our Focus</h3>
+                     <ul order>
+                    {data.list.map((listData) => (
+                      <li>{listData}</li>
+                    ))}
+                  </ul>
+                  </div>
                 </div>
               </>
             ) : (
               <>
-                 
+
                 <div className="service-detail-description
                 detail-description ">
                   <div className="service-heading detail-heading">
@@ -43,7 +52,17 @@ export function DetailServiceOverview() {
                   </div>
                   <div className="service-subheading
                   detail-subheading ">{data.heading}</div>
+                    <div className="detail-list services-detail-list">
+                    <h3>Our Focus</h3>
+                     <ul order>
+                    {data.list.map((listData) => (
+                      <li>{listData}</li>
+                    ))}
+                  </ul>
+                  </div>
+
                 </div>
+
                 <div className="service-img detail-img ">
                   <img src={data.image} alt={data.name} />
                 </div>

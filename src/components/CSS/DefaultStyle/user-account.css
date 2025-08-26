@@ -113,9 +113,12 @@ transition:   color 0.3s ease-in-out;;
     justify-content: center;
     align-items: center;
         font-size: 13px;
-      
+        margin-top: 8px;
+                
+
 
 }
+
 .sign-in-option-btn{
     border: none;
       margin-top: 8px;
@@ -124,14 +127,16 @@ text-align: center;
     padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out,transform 0.2 ease-in-out;
 }
 .sign-in-option-btn img{
     width: 24px;
+
 }
+
 .sign-in-option-btn:hover{
     background-color: #d8d1d1;
-
+    transform: scale(1.1);
 }
 .account-container h1{
 padding: 10px;
