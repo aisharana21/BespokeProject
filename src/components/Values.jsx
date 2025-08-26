@@ -79,11 +79,6 @@ opacity: 1,
                     {
                         valueData.map((data, index) => (
                             <div
-                             
-  
-
-      
-      
                             key={index} className="values-card card">
                                 <div className="card-image values-card-img">
                                     <img src={data.image} alt="product design" />
