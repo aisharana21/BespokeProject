@@ -3,26 +3,38 @@ import './CSS/DefaultStyle/card.css';
 import './CSS/DefaultStyle/text-color.css';
 import './CSS/DefaultStyle/page-heading.css';
 
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { valueData } from './data/valueData';
 export function Values() {
-const containerVariants = {
-  hidden: {}, // parent hidden doesn't need properties
-  visible: {
-    transition: {
-      staggerChildren: 0.2, // gap between children animations
+const cardContainer = {
+hidden: { opacity: 0,
+     scale: 0.8 
     },
-  },
-};
-
-const childVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
   visible: { 
     opacity: 1, 
     scale: 1,
-    transition: { duration: 1, ease: "easeOut" }
-  },
+    transition:
+     { duration: 1,
+         ease: "easeOut",
+          delay: 0.2 
+        }
+}
 };
+const headingContainer={
+    hidden:{
+        opacity: 0, 
+        scale: 0.8
+    },
+    visible:{
+opacity: 1,
+ scale: 1,
+ transition:{ 
+    duration: 1,
+     ease: "easeOut" }
+    }
+}
+
 
     return (
         <div className='bespoke-value-container'>
@@ -31,20 +43,20 @@ const childVariants = {
 
                 className="bespoke-value-description page-heading-description">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    viewport={{ once: true }}
+                   variants={headingContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
                     className="bespoke-value-heading page-heading">
                     <h2>Our Company Values</h2>
                     <h3>What Drives Bespoke Creations
                     </h3>
                 </motion.div>
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    viewport={{ once: true }}
+                 variants={headingContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
                     className="bespoke-value-subheading page-subheading">
                     What Drives Bespoke Creations
 
@@ -59,16 +71,16 @@ const childVariants = {
             <div
                 className="value-overview-card-container ">
                 <motion.div
-                variants={containerVariants}
-                 initial="hidden"
+                variants={cardContainer}
+      initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
                 className="value-overview-card-grid card-grid">
                     {
                         valueData.map((data, index) => (
-                            <motion.div
+                            <div
                              
-     variants={childVariants}
+  
 
       
       
@@ -76,16 +88,16 @@ const childVariants = {
                                 <div className="card-image values-card-img">
                                     <img src={data.image} alt="product design" />
                                 </div>
-                                <motion.div
+                                <div
                                  
-                                className="card-heading">{data.name}</motion.div>
-                                <motion.div
+                                className="card-heading">{data.name}</div>
+                                <div
                              
                                 className="card-subheading">
                                     {data.subHeading}
 
-                                </motion.div>
-                            </motion.div>
+                                </div>
+                            </div>
                         ))
 
 
