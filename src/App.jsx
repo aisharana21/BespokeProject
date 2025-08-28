@@ -14,7 +14,7 @@ import { PrivacyPolicy } from './components/PrivacyPolicy'
 import { TermsAndCondition } from './components/TermsAndCondition'
 import {SignInUser} from './components/SignInUser'
 import {CreateAccount} from './components/CreateAccount'
-
+import { UserInfoPage } from './components/UserInfoPage'
 function App() {
   return (<>
     <Navbar />
@@ -71,7 +71,12 @@ function App() {
       <Route
         path='/createaccount'
         element={<CreateAccount/>}
-      />
+      /> 
+      <Route
+        path='/useraccount'
+        element={<UserInfoPage/>}
+      /> 
+
 
       
     </Routes>

@@ -1,4 +1,4 @@
-import { motion, scale, stagger } from 'framer-motion';
+import { motion} from 'framer-motion';
 import './CSS/DefaultStyle/page-heading.css';
 import { RequestQuoteForm } from './RequestQuoteForm';
 
