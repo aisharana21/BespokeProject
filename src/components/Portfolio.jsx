@@ -1,13 +1,9 @@
 import ManImage from '../assets/man.png';
 import './CSS/DefaultStyle/hero-section.css';
-import './CSS/portfolio.css';
-import WebDevelopmet from '../assets/web.jpg';
-import UI from '../assets/uiwork.jpg';
-import CorporateBranding from '../assets/corporatebrandingkit.jpg';
-import { ProjectDetail } from './ProjectDetail';
-import { NavLink } from 'react-router-dom';
-import './CSS/DefaultStyle/detail-overview.css';
+
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { PortfolioOverview } from './PortfolioOverview';
 
 
 export function Portfolio() {
@@ -26,33 +22,7 @@ ease: "easeOut"
     }
 }       
    
-    const portfolioData = [
-        {
-            id: "20250730-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
-            image: UI,
-            name: " Elegant Interior Design Website",
-            heading:
-                "A minimal yet luxurious website for a high-end interior design firm, focusing on elegance and ease of navigation.",
-
-        },
-        {
-            id: "20250731-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
-
-            image: WebDevelopmet,
-            name: "Fashion E-commerce Platform",
-            heading:
-                " A bespoke online store for a premium clothing brand with a focus on user experience and product storytelling.",
-
-        },
-        {
-            id: "20250732-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
-            image: CorporateBranding,
-            name: "Corporate Branding Kit",
-            heading:
-                " A full branding solution for a corporate client, from logo design to marketing materials.",
-
-        }
-    ];
+  
     return (
         <div className="portfolio-container">
             <div className="hero-section">
@@ -79,7 +49,8 @@ ease: "easeOut"
                     <img src={ManImage} alt="" />
                 </div>
             </div>
-            <div className="portfolio-overview-container 
+            <PortfolioOverview/>
+            {/* <div className="portfolio-overview-container 
             detail-overview-conatiner">
                 <div className="portfolio-overview detail-overview">
                     {portfolioData.map((data, index) => (
@@ -142,7 +113,7 @@ ease: "easeOut"
                         </motion.div>
                     ))}
                 </div>
-            </div>
+            </div> */}
         </div>
 
     );

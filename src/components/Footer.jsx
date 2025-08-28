@@ -8,7 +8,7 @@ import LinkedInLogo from '../assets/linkedinlogo.png';
 import YoutubeLogo from '../assets/youtubelogo.png';
 import XLogo from '../assets/xLogo.png';
 import { NavLink } from "react-router-dom";
-import { projectDetailData } from './data/projectDetailData';
+import { projectDetailData } from './data/projectDetailData.js';
 import { useState } from "react";
 
 export function Footer() {

@@ -1,7 +1,8 @@
-import { faqData } from "./data/faqdata";
+import { faqData } from "./data/faqdata.js";
 import ArrowButton from '../assets/arrow-24.png';
 import { useState } from "react";
 import './CSS/faq.css';
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 export function FAQ() {

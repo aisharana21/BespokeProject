@@ -80,6 +80,9 @@
 .faq.active .tab-open-arrow img {
     transform: rotate(180deg);
 }
+.faq.active .tab-open-arrow{
+      background-color: rgb(235, 230, 230);
+}
 
 .faq-answer:hover{
     background-color: rgb(235, 230, 230);

@@ -1,7 +1,7 @@
 import './CSS/DefaultStyle/card.css';
-import './CSS/detail-service-overview-pagination.css';
-import { detailServiceData } from './data/detailServiceData';
+import { detailServiceData } from './data/detailServiceData.js';
 import './CSS/DefaultStyle/detail-overview.css';
+import './CSS/DefaultStyle/react-paginate.css';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import ReactPaginate from 'react-paginate';
@@ -14,6 +14,8 @@ const detailDisplayed = pageNumber*detailPerPage;
 const detailEndDisplay = detailDisplayed+detailPerPage;
 const displayDetail = detailServiceData.slice(detailDisplayed,detailEndDisplay);
 const pageCount = Math.ceil(detailServiceData.length/detailPerPage);
+
+//by pagination data.selected is given. destructured selected
 const pageChange =({selected})=>{
 setPageNumber(selected);
 }

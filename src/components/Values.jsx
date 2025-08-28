@@ -5,7 +5,7 @@ import './CSS/DefaultStyle/page-heading.css';
 
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { valueData } from './data/valueData';
+import { valueData } from './data/valueData.js';
 export function Values() {
 const cardContainer = {
 hidden: { opacity: 0,

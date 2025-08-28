@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
-import { projectDetailData } from "./data/projectDetailData";
+
+
 import { ProjectDetailOverview } from "./ProjectDetailOverview";
 import './CSS/DefaultStyle/page-heading.css';
 import { ProjectDetailOverviewFeatureCard } from './ProjectDetailOverviewFeatureCard';
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-
+import { projectDetailData } from "./data/projectDetailData";
 export function ProjectDetail(){
      const { projectid } = useParams();
  const project =  projectDetailData.find((data)=> data.id===projectid)

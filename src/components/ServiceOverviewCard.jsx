@@ -2,7 +2,7 @@ import './CSS/DefaultStyle/card.css';
 
 import './CSS/service-overview-card.css'
 
-import { serviceData } from './data/serviceData';
+import { serviceData } from './data/serviceData.js';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
