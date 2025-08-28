@@ -4,6 +4,9 @@ import BrandingMocking from '../../assets/brandingmockup.jpg';
 import UIdesign from '../../assets/uidesign.jpg';
 import DesignConsultationMocking from '../../assets/consultationdesign.jpg';
 import DevelopmentMocking from '../../assets/softwaredevelopment.jpg';
+import WebDesignMocking from '../../assets/webdesignmocking.jpg';
+import GraphicDesignMocking from '../../assets/graphicdesignmocking.jpg';
+import PackagingDesignMocking from '../../assets/packagingdesignmocking.jpg';
 
 export const detailServiceData = [
    {
@@ -71,9 +74,46 @@ export const detailServiceData = [
     "Integrate features to meet business needs",
     "Maintain and optimize for future growth"
   ]
+},
+{
+  image: WebDesignMocking,
+  name: "Web Design",
+  heading:
+    "We create visually stunning, responsive, and user-friendly websites that deliver seamless experiences across all devices.",
+  list: [
+    "Custom website design tailored to your brand",
+    "Fully responsive and mobile-friendly layouts",
+    "SEO-optimized structure for better visibility",
+    "Intuitive navigation and smooth user experience",
+    "Modern, clean, and engaging UI designs"
+  ]
+},
+{
+  image: GraphicDesignMocking,
+  name: "Graphic Design",
+  heading:
+    "We craft visually compelling designs that communicate your message clearly and capture attention instantly.",
+  list: [
+    "Creative and impactful visual concepts",
+    "Custom illustrations and graphics",
+    "Marketing materials like posters, flyers, and banners",
+    "Consistent branding across all visuals",
+    "High-quality designs for both digital and print media"
+  ]
+},
+{
+  image: PackagingDesignMocking,
+  name: "Packaging Design",
+  heading:
+    "We design packaging that not only protects your product but also makes it stand out and connect with customers emotionally.",
+  list: [
+    "Creative and functional packaging concepts",
+    "Brand-focused design for maximum impact",
+    "Eco-friendly and sustainable materials",
+    "Custom shapes, colors, and finishes",
+    "Designs that enhance shelf appeal and brand recognition"
+  ]
 }
-
-
 
 
   ];

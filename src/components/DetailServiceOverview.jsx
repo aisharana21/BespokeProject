@@ -1,16 +1,27 @@
 import './CSS/DefaultStyle/card.css';
+import './CSS/detail-service-overview-pagination.css';
 import { detailServiceData } from './data/detailServiceData';
 import './CSS/DefaultStyle/detail-overview.css';
 import { motion } from 'framer-motion';
+import ReactPaginate from 'react-paginate';
+import { useState } from 'react';
 export function DetailServiceOverview() {
-
-
+  
+const detailPerPage =4;
+const [pageNumber, setPageNumber]= useState(0);
+const detailDisplayed = pageNumber*detailPerPage;
+const detailEndDisplay = detailDisplayed+detailPerPage;
+const displayDetail = detailServiceData.slice(detailDisplayed,detailEndDisplay);
+const pageCount = Math.ceil(detailServiceData.length/detailPerPage);
+const pageChange =({selected})=>{
+setPageNumber(selected);
+}
   return (
     <div className="detail-service-overview-container
      detail-overview-container" >
       <div className="detail-service-overview 
       detail-overview">
-        {detailServiceData.map((data, index) => (
+         {displayDetail.map((data, index) => (
           <motion.div
 
             initial={{ opacity: 0, x: -100 }}
@@ -34,16 +45,16 @@ export function DetailServiceOverview() {
                   </div>
                     <div className="detail-list services-detail-list">
                     <h3>Our Focus</h3>
-                     <ul order>
-                    {data.list.map((listData) => (
-                      <li>{listData}</li>
+                     <ul>
+                    {data.list.map((listData,index) => (
+                      <li key={index} >{listData}</li>
                     ))}
                   </ul>
                   </div>
                 </div>
               </>
             ) : (
-              <>
+              <> 
 
                 <div className="service-detail-description
                 detail-description ">
@@ -54,9 +65,9 @@ export function DetailServiceOverview() {
                   detail-subheading ">{data.heading}</div>
                     <div className="detail-list services-detail-list">
                     <h3>Our Focus</h3>
-                     <ul order>
-                    {data.list.map((listData) => (
-                      <li>{listData}</li>
+                     <ul >
+                    {data.list.map((listData,i) => (
+                      <li key={i}>{listData}</li>
                     ))}
                   </ul>
                   </div>
@@ -69,8 +80,22 @@ export function DetailServiceOverview() {
               </>
             )}
           </motion.div>
-        ))}
+        ))} 
+        <ReactPaginate
+        previousLabel={"Previous"}
+        nextLabel={"Next"}
+        pageCount={pageCount}
+        onPageChange={pageChange}
+        containerClassName='pagination-bttn'
+        previousLinkClassName='prev-bttn'
+        nextLinkClassName='next-bttn'
+        disabledClassName='pagination-disabled'
+        activeClassName='pagination-active'
+        />
+       
       </div>
     </div>
   );
 }
+
+
