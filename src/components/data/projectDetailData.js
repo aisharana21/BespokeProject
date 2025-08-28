@@ -62,41 +62,25 @@ export const projectDetailData=[
 
 },
 {
-    id: "20250734-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
-    name: "Motion Graphics Campaign",
-    category: "Motion Graphics & Animation",
-    description: "An engaging motion graphics video series for a tech startup launch, blending creativity and storytelling.",
-    image: MotionGraphicsCampaignMocking,
-    projectOverviewP1: "This project focused on creating a visually striking motion graphics campaign for a tech startup launch. The objective was to design animations that communicate the brand’s message effectively while keeping the audience engaged. The visual style combines sleek transitions, bold typography, and vibrant color palettes to convey innovation and energy.",
-    projectOverviewP2: "Each animation was designed to work seamlessly across multiple platforms, including social media, web, and presentation materials. The campaign emphasizes brand storytelling through dynamic visual sequences, ensuring the content stands out and resonates with the target audience in a competitive digital space.",
-    features: [
-        "Custom 2D and 3D animation sequences",
-        "Vibrant and modern color scheme",
-        "Smooth transitions and motion effects",
-        "Optimized for social media and digital ads",
-        "Dynamic typography for strong messaging",
-        "Cross-platform compatibility (web, mobile, presentations)"
-    ]
-},
-{
-    id: "20250734-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
-    name: "Motion Graphics Campaign",
-    category: "Motion Graphics & Animation",
-    description: "An engaging motion graphics video series for a tech startup launch, blending creativity and storytelling.",
-    image: MotionGraphicsCampaignMocking,
-    projectOverviewP1: "This project focused on creating a visually striking motion graphics campaign for a tech startup launch. The objective was to design animations that communicate the brand’s message effectively while keeping the audience engaged. The visual style combines sleek transitions, bold typography, and vibrant color palettes to convey innovation and energy.",
-    projectOverviewP2: "Each animation was designed to work seamlessly across multiple platforms, including social media, web, and presentation materials. The campaign emphasizes brand storytelling through dynamic visual sequences, ensuring the content stands out and resonates with the target audience in a competitive digital space.",
-    features: [
-        "Custom 2D and 3D animation sequences",
-        "Vibrant and modern color scheme",
-        "Smooth transitions and motion effects",
-        "Optimized for social media and digital ads",
-        "Dynamic typography for strong messaging",
-        "Cross-platform compatibility (web, mobile, presentations)"
-    ]
-},
-{
     id: "20250733-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
+    name: "Motion Graphics Campaign",
+    category: "Motion Graphics & Animation",
+    description: "An engaging motion graphics video series for a tech startup launch, blending creativity and storytelling.",
+    image: MotionGraphicsCampaignMocking,
+    projectOverviewP1: "This project focused on creating a visually striking motion graphics campaign for a tech startup launch. The objective was to design animations that communicate the brand’s message effectively while keeping the audience engaged. The visual style combines sleek transitions, bold typography, and vibrant color palettes to convey innovation and energy.",
+    projectOverviewP2: "Each animation was designed to work seamlessly across multiple platforms, including social media, web, and presentation materials. The campaign emphasizes brand storytelling through dynamic visual sequences, ensuring the content stands out and resonates with the target audience in a competitive digital space.",
+    features: [
+        "Custom 2D and 3D animation sequences",
+        "Vibrant and modern color scheme",
+        "Smooth transitions and motion effects",
+        "Optimized for social media and digital ads",
+        "Dynamic typography for strong messaging",
+        "Cross-platform compatibility (web, mobile, presentations)"
+    ]
+},
+
+{
+    id: "20250734-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
     name: "Luxury Packaging Design",
     category: "Packaging Design",
     description: "Elegant and sustainable packaging design for a premium cosmetics brand, enhancing brand perception and user experience.",
