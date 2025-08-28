@@ -7,6 +7,8 @@ import DevelopmentMocking from '../../assets/softwaredevelopment.jpg';
 import WebDesignMocking from '../../assets/webdesignmocking.jpg';
 import GraphicDesignMocking from '../../assets/graphicdesignmocking.jpg';
 import PackagingDesignMocking from '../../assets/packagingdesignmocking.jpg';
+import MotionGraphicsMocking from '../../assets/motionandanimation.jpg';
+import DigitalMarketingDesignMocking from '../../assets/digitalmarketdesign.jpg';
 
 export const detailServiceData = [
    {
@@ -113,7 +115,35 @@ export const detailServiceData = [
     "Custom shapes, colors, and finishes",
     "Designs that enhance shelf appeal and brand recognition"
   ]
+},
+{
+  image: MotionGraphicsMocking,
+  name: "Motion Graphics & Animation",
+  heading:
+    "We bring your ideas to life with dynamic animations and motion graphics that captivate and engage your audience.",
+  list: [
+    "Custom animated videos for brands and products",
+    "Explainer videos that simplify complex ideas",
+    "Eye-catching social media motion graphics",
+    "Interactive animations for websites and apps",
+    "High-quality 2D and 3D motion design"
+  ]
+},
+{
+  image: DigitalMarketingDesignMocking,
+  name: "Digital Marketing Design",
+  heading:
+    "We create visually compelling marketing assets that boost your brand’s online presence and drive engagement.",
+  list: [
+    "Creative social media post and ad designs",
+    "Eye-catching banner and display ads",
+    "Email marketing templates that convert",
+    "Consistent visual branding across all campaigns",
+    "Designs optimized for multiple digital platforms"
+  ]
 }
+
+
 
 
   ];

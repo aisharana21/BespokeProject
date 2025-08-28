@@ -2,6 +2,7 @@ import './CSS/DefaultStyle/card.css';
 import './CSS/detail-service-overview-pagination.css';
 import { detailServiceData } from './data/detailServiceData';
 import './CSS/DefaultStyle/detail-overview.css';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import ReactPaginate from 'react-paginate';
 import { useState } from 'react';
@@ -87,8 +88,8 @@ setPageNumber(selected);
         pageCount={pageCount}
         onPageChange={pageChange}
         containerClassName='pagination-bttn'
-        previousLinkClassName='prev-bttn'
-        nextLinkClassName='next-bttn'
+        previousLinkClassName='previous'
+        nextLinkClassName='next'
         disabledClassName='pagination-disabled'
         activeClassName='pagination-active'
         />
