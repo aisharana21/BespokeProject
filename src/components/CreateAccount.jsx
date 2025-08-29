@@ -4,8 +4,7 @@ import './CSS/DefaultStyle/user-account.css';
 import { useFirebase } from './Context/firebase';
 import { useNavigate } from 'react-router-dom';
 import { SignInGoogle } from './SignInGoogle';
-import { db } from './Context/firebase';
-import { addDoc, collection } from 'firebase/firestore';
+
 // import { createUserWithEmailAndPassword } from 'firebase/auth';
 export function CreateAccount() {
 const navigate= useNavigate();
@@ -31,18 +30,10 @@ const [showPassword, setShowPassword]= useState(false);
         setCheckErros(validateErrors)
   if (Object.keys(validateErrors).length === 0) {
                  accountCreation();
-                  addUserInfoToDatabase();
+           
         }
     }
-    const addUserInfoToDatabase= async ()=>{
-        await addDoc(collection(db, 'UserAccountInformation'),{
-            username :inputValues.username,
-            email: inputValues.email,
-            password: inputValues.password
-        })
-         navigate("/")
 
-    }
     const validate = () => {
         const errors = {}
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -73,6 +64,8 @@ const [showPassword, setShowPassword]= useState(false);
   await firebase.createUserAccount( inputValues.email,inputValues.password)
 //    const user = auth.currentUser;
 //    console.log(user);  
+    navigate("/");
+
     }
          catch (error) {
        
