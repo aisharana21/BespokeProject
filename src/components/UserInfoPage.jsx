@@ -19,8 +19,8 @@ export function UserInfoPage() {
 
         if (docSnap.exists()) {
           setUserDetail(docSnap.data());
-          
-        } 
+
+        }
       }
     });
 
@@ -38,7 +38,8 @@ export function UserInfoPage() {
 
   return (
     <div className="user-account-information-container">
-      <h2>WELCOME {userDetail.username}</h2>
+      <h2>WELCOME {userDetail?.username || 'TO BESPOKE'}</h2>
+  
       <div className="user-account-information">
         <div className="user">
           <h4>Your Account Information</h4>
