@@ -13,7 +13,6 @@ export function UserInfoPage() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
-        console.log("Current user:", user);
 
         const docRef = doc(db, "UserAccountInformation", user.uid);
         const docSnap = await getDoc(docRef);

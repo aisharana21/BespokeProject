@@ -64,7 +64,7 @@ const [showPassword, setShowPassword]= useState(false);
   await firebase.createUserAccount( inputValues.email,inputValues.password)
 //    const user = auth.currentUser;
 //    console.log(user);  
-    navigate("/");
+   
     const user = auth.currentUser;
     // user.displayName= inputValues.username;
     if(user){
@@ -82,7 +82,7 @@ setCheckErros((prevError) => ({ ...prevError, error: error.message }));
            console.log(error)
         }
      
-
+ navigate("/");
         
     }
     return (
