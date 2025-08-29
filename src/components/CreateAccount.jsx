@@ -4,8 +4,8 @@ import './CSS/DefaultStyle/user-account.css';
 import { useFirebase } from './Context/firebase';
 import { useNavigate } from 'react-router-dom';
 import { SignInGoogle } from './SignInGoogle';
-
-// import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth,db } from './Context/firebase';
+import { setDoc,doc } from 'firebase/firestore';
 export function CreateAccount() {
 const navigate= useNavigate();
 
@@ -65,7 +65,15 @@ const [showPassword, setShowPassword]= useState(false);
 //    const user = auth.currentUser;
 //    console.log(user);  
     navigate("/");
-
+    const user = auth.currentUser;
+    // user.displayName= inputValues.username;
+    if(user){
+        await setDoc(doc(db, "UserAccountInformation", user.uid),{
+            email: inputValues.email,
+            username:inputValues.username
+        });
+    }
+console.log(user);
     }
          catch (error) {
        
