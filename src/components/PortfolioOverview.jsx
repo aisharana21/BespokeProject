@@ -1,5 +1,6 @@
 import React from 'react'
 import { portfolioData } from './data/portfolioData';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { ProjectDetail } from './ProjectDetail';
 import { NavLink } from 'react-router-dom';
@@ -82,7 +83,6 @@ setPageNumber(selected);
                                     detail-img">
                                         <img src={data.image} alt={data.name} />
                                     </div>
-                                    {console.log(index)}
 
                                 </>
                             )}
