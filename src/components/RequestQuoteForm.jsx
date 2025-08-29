@@ -168,7 +168,7 @@ await addDoc(collection(db, 'userRequestQuote'),{
                             onChange={handleChange}
                             value={formInput.projecttype}
                         >
-                            <option disabled value="">Select a type</option>
+                            <option disabled value="" >Select a type</option>
                             <option value="Product Design">Product Design</option>
                             <option value="Branding">Branding</option>
                             <option value="Web Design">Web Design</option>
@@ -189,7 +189,7 @@ await addDoc(collection(db, 'userRequestQuote'),{
 
 
                         >
-                            <option disabled>Select budget</option>
+                            <option disabled value="">Select budget</option>
                             <option >$1,000-$5,000</option>
                             <option >$5,000-$10,000</option>
                             <option>Above $10,000</option>
